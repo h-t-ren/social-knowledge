@@ -18,13 +18,15 @@
    (<a id="headerActiveLink" href='<c:out value="${englishLocaleUrl}"/>'>English</a>|
    <a id="headerActiveLink" href='<c:out value="${chineseLocaleUrl}"/>'>中文</a>)&nbsp; 
    
-   <security:authorize ifAllGranted="ROLE_USER">
+
+   <security:authorize access="hasRole('ROLE_USER')">
 	<c:if test="${pageContext.request.userPrincipal != null}">
 		<fmt:message key="welcome" />, ${pageContext.request.userPrincipal.name} |
+		<a id="headerActiveLink" href="<c:url value="/login/logout" />"><fmt:message key="logout" /></a>
 	</c:if>
-	<a id="headerActiveLink" href="<c:url value="/login/logout" />"><fmt:message key="logout" /></a>
-   </security:authorize> 
-   <security:authorize ifAllGranted="ROLE_ANONYMOUS">
+    </security:authorize>
+   
+   <security:authorize access="isAnonymous()">
 	<a id="headerActiveLink" href="<c:url value="/login/login" />"><fmt:message key="login" /></a>
   </security:authorize>
   </div>
@@ -32,37 +34,17 @@
 
 <div id="navmenu">
 <ul id="nav">
-      <security:authorize ifAllGranted="ROLE_ADMIN">
+        <security:authorize access="hasRole('ROLE_ADMIN')">
       	<li><a class="headerActiveLink" href="<c:url value="/admin/dashboard" />"><fmt:message key="admin" /></a></li>
       </security:authorize>
 	<!--  <li><a class="headerDisabledLink"><fmt:message key="home" /></a></li>-->
-	 <security:authorize ifAllGranted="ROLE_USER">
-     <c:choose>
-     <c:when test="${viewState.activeLevel==1}">
+	   <security:authorize access="hasRole('ROLE_USER')">
+  
       	<li><a class="headerActiveLink" href="<c:url value="/prob" />"><fmt:message key="problem" /></a></li>
  	    <li><a class="headerDisabledLink"><fmt:message key="instance" /></a></li>
  	    <li><a class="headerDisabledLink"><fmt:message key="analysis" /></a></li>
  	    <li><a class="headerDisabledLink"><fmt:message key="tasks" /></a></li>
-     </c:when>
-      <c:when test="${viewState.activeLevel==2}">
-      	<li><a class="headerActiveLink" href="<c:url value="/prob" />"><fmt:message key="problem" /></a></li>
- 	    <li><a class="headerActiveLink" href="<c:url value="/instance?idProb=${idProb}" />"><fmt:message key="instance" /></a></li>
- 	    <li><a class="headerDisabledLink"><fmt:message key="analysis" /></a></li>
- 	    <li><a class="headerDisabledLink"><fmt:message key="tasks" /></a></li>
-     </c:when>
-      <c:when test="${viewState.activeLevel==3}">
-      	<li><a class="headerActiveLink" href="<c:url value="/prob" />"><fmt:message key="problem" /></a></li>
- 	    <li><a class="headerActiveLink" href="<c:url value="/instance?idProb=${idProb}" />"><fmt:message key="instance" /></a></li>
- 	    <li><a class="headerActiveLink" href="<c:url value="/analysis?idProb=${idProb}&idInstance=${idInstance}" />"><fmt:message key="analysis" /></a></li>
- 	    <li><a class="headerActiveLink"><fmt:message key="tasks" /></a></li>
-     </c:when>
-     <c:otherwise>
-        <li><a class="headerActiveLink" href="<c:url value="/prob" />"><fmt:message key="problem" /></a></li>
- 	    <li><a class="headerDisabledLink"><fmt:message key="instance" /></a></li>
- 	    <li><a class="headerDisabledLink"><fmt:message key="analysis" /></a></li>
- 	    <li><a class="headerDisabledLink"><fmt:message key="tasks" /></a></li>
-     </c:otherwise>
-     </c:choose>
+    
      </security:authorize>
 
 

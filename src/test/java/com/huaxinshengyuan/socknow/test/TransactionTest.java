@@ -25,11 +25,22 @@ public class TransactionTest {
 
     @Test
     public void testBefriendUsers() {
-        final User me = userRepository.save(new User("hongtao", "hongtao", "hongtao", User.Roles.ROLE_USER));
+       // final User me = userRepository.save(new User("hongtao", "hongtao", "hongtao", User.Roles.ROLE_USER));
       //  final User you = userRepository.save(new User("you", "you", "you"));
       //   userRepository.addFriend("you", userRepository.getUserFromSession());
-         final User loaded = userRepository.findOne(me.getId());
-         System.out.println("user name: " + loaded.getLogin() +", pass: " + loaded.getPassword());
+     //    final User loaded = userRepository.findOne(me.getId());
+    	
+    	for(User u: userRepository.findAll())
+    	{
+    		 System.out.println("user name: " + u.getLogin() +", pass: " + u.getPassword());
+    		 for(User.Roles role : u.getRole())
+    		 {
+    			 System.out.println("Role: " + role.getAuthority());
+    		 }
+    	}
+    	
+    	
+        
        //  assertEquals(1,loaded.getFriends().size());
     }
 

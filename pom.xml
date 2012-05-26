@@ -113,12 +113,12 @@
 		</dependency>
     
     
-    <dependency>
+    
+      <dependency>
 			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-taglibs</artifactId>
+			<artifactId>spring-security-core</artifactId>
 			<version>${spring.security-version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-config</artifactId>
@@ -131,8 +131,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-    
-    		<dependency>
+		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-web</artifactId>
 			<version>${spring.security-version}</version>
@@ -145,6 +144,14 @@
 			</exclusions>
 		</dependency>
     
+		  <dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>${spring.security-version}</version>
+		</dependency>
+   
+    
+  
     
     
 	<!-- A seamless aspect-oriented extension to the Java programming language -->
@@ -373,7 +380,7 @@
 				<version>7.1.2.v20100523</version>
 				<configuration>
 					<webAppConfig>
-						<contextPath>/know</contextPath>
+						<contextPath>/</contextPath>
 					</webAppConfig>
 					<!--scanIntervalSeconds>1</scanIntervalSeconds -->
 				</configuration>

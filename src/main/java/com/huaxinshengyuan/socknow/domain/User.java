@@ -4,11 +4,15 @@ import org.neo4j.graphdb.Direction;
 import org.springframework.data.neo4j.annotation.*;
 import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 import org.springframework.security.core.GrantedAuthority;
+
+import java.io.Serializable;
 import java.util.Set;
 
 @NodeEntity
-public class User {
-    @GraphId Long nodeId;
+public class User implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@GraphId Long nodeId;
 
     private static final String SALT = "yibayan";
     public static final String FRIEND = "FRIEND";
@@ -90,7 +94,6 @@ public class User {
 
     public enum Roles implements GrantedAuthority {
         ROLE_USER, ROLE_ADMIN;
-
         @Override
         public String getAuthority() {
             return name();
