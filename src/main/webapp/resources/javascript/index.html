@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>jSlider</title>
+	
+	<!-- bin/jquery.slider.min.css -->
+	<link rel="stylesheet" href="css/jslider.css" type="text/css">
+	<link rel="stylesheet" href="css/jslider.blue.css" type="text/css">
+	<link rel="stylesheet" href="css/jslider.plastic.css" type="text/css">
+	<link rel="stylesheet" href="css/jslider.round.css" type="text/css">
+	<link rel="stylesheet" href="css/jslider.round.plastic.css" type="text/css">
+  <!-- end -->
+
+	<script type="text/javascript" src="js/jquery-1.7.1.js"></script>
+	
+	<!-- bin/jquery.slider.min.js -->
+	<script type="text/javascript" src="js/jshashtable-2.1_src.js"></script>
+	<script type="text/javascript" src="js/jquery.numberformatter-1.2.3.js"></script>
+	<script type="text/javascript" src="js/tmpl.js"></script>
+	<script type="text/javascript" src="js/jquery.dependClass-0.1.js"></script>
+	<script type="text/javascript" src="js/draggable-0.1.js"></script>
+	<script type="text/javascript" src="js/jquery.slider.js"></script>
+  <!-- end -->
+	
+	<style type="text/css" media="screen">
+	 .layout { padding: 50px; font-family: Georgia, serif; }
+	 .layout-slider { margin-bottom: 20px; width: 50%; }
+	 .layout-slider-settings { font-size: 10px; padding-bottom: 40px; }
+	 .layout-slider-settings pre { font-family: Courier; }
+	</style>
+
+</head>
+<body>
+  
+  <div class="layout">
+
+    <div class="layout-slider" style="width: 100%">
+     <table><tr><td>res/asp: <span style="display: inline-block; width: 200px; padding: 5px 5px 5px 5px;"><input id="Slider1" type="slider" name="price" value="2200;3000" /></span></td>
+     <td>imp: <span style="display: inline-block; width: 200px; padding: 5px 5px 5px 5px;"><input id="Slider2" type="slider" name="imporatnce" value="5" /></span> </td></tr>
+     <tr><td>res/asp: <span style="display: inline-block; width: 200px; padding: 5px 5px 5px 5px;"><input id="Slider3" type="slider" name="price" value="1200;4000" /></span></td>
+     <td>imp: <span style="display: inline-block; width: 200px; padding: 5px 5px 5px 5px;"><input id="Slider4" type="slider" name="imporatnce" value="2" /></span> </td></tr>
+     </table>
+    
+    </div>
+    <script type="text/javascript" charset="utf-8">
+      jQuery("#Slider1").slider({ from: 1000, to: 5000,step: 1, smooth: true, round: 0, dimension: "&nbsp;$", skin: "plastic",callback: function( value ){ alert('new val:'+value);} });
+    </script>
+    <script type="text/javascript" charset="utf-8">
+      jQuery("#Slider2").slider({ from: 0, to: 7,step: 1, smooth: false, round: 0,  scale: ['', '','','','','','', ''],dimension: "&nbsp;", skin: "round",callback: function( value ){ alert('new val:'+value);} });
+    </script>
+   <script type="text/javascript" charset="utf-8">
+      jQuery("#Slider3").slider({ from: 1000, to: 5000,step: 1, smooth: true, round: 0, dimension: "&nbsp;euro", skin: "plastic",callback: function( value ){ alert('new val:'+value);} });
+    </script>
+    <script type="text/javascript" charset="utf-8">
+      jQuery("#Slider4").slider({ from: 0, to: 7,step: 1, smooth: false, round: 0,  scale: ['', '','','','','','', ''],dimension: "&nbsp;", skin: "round",callback: function( value ){ alert('new val:'+value);} });
+    </script>
+
+   
+
+    
+</body>
+</html>

@@ -1,0 +1,517 @@
+table.results {
+	border-spacing: 2px 0px;
+}
+
+td.status {
+	font-family: Helvetica, "Arial CE", Arial;
+	font-size: 8pt;
+	font-weight: normal;
+	background-color: navy;
+	color: rgb(255, 255, 255);
+	border-left: 0;
+	border-top: 0;
+	border-right: 0;
+	border-bottom: 0;
+}
+
+td.status_label {
+	font-family: Helvetica, "Arial CE", Arial;
+	font-size: 8pt;
+	font-weight: bolder;
+	background-color: navy;
+	color: rgb(255, 255, 255);
+}
+
+#nvgtn_br {
+	padding: 3px;
+	margin-bottom: 25px;
+	margin-left: 0;
+}
+
+#nvgtn_br ul {
+	margin-left: 0;
+	padding-left: 0;
+	display: inline;
+}
+
+#nvgtn_br ul li {
+	margin-left: 0;
+	padding-left: 2px;
+	border: none;
+	list-style: none;
+	display: inline;
+	font-size: 90%;
+	font-weight: bold;
+}
+
+
+table.results {
+	border-spacing: 2px 0px;
+}
+
+table.innertable {
+	border-spacing: 0px 0px;
+}
+
+td.innerstatus {
+	font-family: Helvetica, "Arial CE", Arial;
+	font-size: 8pt;
+	font-weight: normal;
+	background-color: navy;
+	color: rgb(255, 255, 255);
+	padding: 1px 1px 1px 1px;
+}
+
+td.status {
+	font-family: Helvetica, "Arial CE", Arial;
+	font-size: 8pt;
+	font-weight: normal;
+	background-color: navy;
+	color: rgb(255, 255, 255);
+	padding: 1px 1px 1px 1px;
+}
+
+td.status_label {
+	font-family: Helvetica, "Arial CE", Arial;
+	font-size: 8pt;
+	font-weight: bolder;
+	background-color: navy;
+	color: rgb(255, 255, 255);
+	padding: 1px 1px 1px 1px;
+}
+
+td.total {
+	padding: 5px;
+	background: none;
+	text-align: right;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+tr.alt {
+	background: #F5FAFA;
+	color: #797268;
+}
+
+table.tbl {
+	
+}
+
+table.tbl th {
+	padding: 0;
+	margin: 0;
+	font-size: 80%;
+	color: graytext;
+}
+
+table.tbl td {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	font-size: 90%;
+	text-align: left;
+}
+
+td.cchart {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	font-size: 80%;
+	text-align: left;
+}
+
+tr.noborder {
+	padding: 0;
+	margin: 0;
+	border: 0px;
+}
+
+th.noborder {
+	padding: 0;
+	margin: 0;
+	border: 0px;
+	font-size: 80%;
+}
+th.oneborder {
+	padding: 0;
+	margin: 0;
+	/*border-right: thin solid black;*/
+	font-size: 80%;
+}
+td.noborder {
+	padding: 0;
+	margin: 0;
+	border: 0px;
+	font-size: 80%;
+}
+
+td.radiobutton {
+	padding: 0;
+	margin: 0;
+	border: 1px solid #C1DAD7;
+	font-size: 50%;
+	text-align: left;
+}
+
+td.hiddenradiobutton {
+	padding: 0;
+	margin: 0;
+	border: 1px solid #C1DAD7;
+	font-size: 50%;
+	text-align: left;
+}
+
+div#radiobutton {
+	position: absolute;
+	left: 2px;
+}
+
+td.lngnm {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	width: 50em;
+	font-size: 90%;
+}
+
+td.shrtnm {
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+td.dscrptn {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	width: 50em;
+	font-size: 90%;
+}
+
+td.total {
+	border: 1px solid #C1DAD7;
+	background: none;
+	text-align: right;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+tr.alt {
+	background: #F5FAFA;
+	color: #797268;
+}
+
+table.tbl {
+	
+}
+
+table.tbl th {
+	padding: 0;
+	margin: 0;
+	font-size: 80%;
+	color: graytext;
+}
+
+td.lngnm {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	width: 50em;
+	font-size: 90%;
+}
+
+td.shrtnm {
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+td.dscrptn {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	width: 50em;
+	font-size: 90%;
+}
+
+#MCALoadButton {
+	visibility: hidden;
+}
+
+span.bannerBarTitle {
+	vertical-align: middle;
+	white-space: nowrap;
+	color: rgb(224, 224, 239);
+	font-size: 22pt;
+	font-weight: 500;
+	padding: 0px 10px 0px 10px;
+}
+
+span.bannerBarSubTitle {
+	vertical-align: middle;
+	white-space: nowrap;
+	padding: 0px 10px 0px 10px;
+}
+
+span.field {
+	font-weight: bold;
+	display: block;
+}
+
+span.fieldNextTo {
+	font-weight: bold;
+}
+
+span.fieldStatus {
+	font: 12px Arial, Helvetica, sans-serif;
+	color: red;
+	display: block;
+}
+
+TD.top_level_2 {
+	font-family: Helvetica, "Arial CE", Arial;
+	font-size: 8pt;
+	font-weight: bolder;
+	background-color: #f1f66b;
+	text-align: left;
+}
+
+TD.top_level_1 {
+	font-family: Helvetica, "Arial CE", Arial;
+	font-size: 70%;
+	font-weight: bolder;
+	background-color: #72f4d2;
+	text-align: left;
+}
+
+TD.top_level_3 {
+	font-family: Helvetica, "Arial CE", Arial;
+	font-size: 70%;
+	font-weight: bolder;
+	background-color: #3cccd1;
+	text-align: left;
+}
+
+TD.lowest_level_2 {
+	font-family: Helvetica, "Arial CE", Arial;
+	font-size: 70%;
+	background-color: #f0f2b8;
+	text-indent: 9px;
+}
+
+TD.lowest_level_1 {
+	font-family: Helvetica, "Arial CE", Arial;
+	font-size: 70%;
+	text-indent: 9px;
+	background-color: #c0f7e9;
+}
+
+TD.lowest_level_3 {
+	font-family: Helvetica, "Arial CE", Arial;
+	font-size: 70%;
+	text-indent: 9px;
+	background-color: #99f5f9;
+}
+
+td.inter_level_2_1 {
+	font-family: Helvetica, "Arial CE", Arial;
+	font-size: 70%;
+	background-color: #eff38b;
+	text-indent: 3px;
+}
+
+td.inter_level_2_2 {
+	font-family: Helvetica, "Arial CE", Arial;
+	font-size: 70%;
+	background-color: #eff2a1;
+	text-indent: 6px;
+}
+
+td.inter_level_1_1 {
+	font-family: Helvetica, "Arial CE", Arial;
+	font-size: 70%;
+	background-color: #94f4db;
+	text-indent: 3px;
+}
+
+td.inter_level_1_2 {
+	font-family: Helvetica, "Arial CE", Arial;
+	font-size: 70%;
+	background-color: #a8f7e2;
+	text-indent: 6px;
+}
+
+td.inter_level_3_1 {
+	font-family: Helvetica, "Arial CE", Arial;
+	font-size: 70%;
+	background-color: #5CD0D8;
+	text-indent: 3px;
+}
+
+td.inter_level_3_2 {
+	font-family: Helvetica, "Arial CE", Arial;
+	font-size: 70%;
+	background-color: #3deef4;
+	text-indent: 6px;
+}
+
+#MCALoadButton {
+	visibility: hidden;
+}
+
+span.bannerBarTitle {
+	vertical-align: middle;
+	white-space: nowrap;
+	color: rgb(224, 224, 239);
+	font-size: 22pt;
+	font-weight: 500;
+	padding: 0px 10px 0px 10px;
+}
+
+span.bannerBarSubTitle {
+	vertical-align: middle;
+	white-space: nowrap;
+	padding: 0px 10px 0px 10px;
+}
+
+span.field {
+	font-weight: bold;
+	display: block;
+}
+
+span.fieldNextTo {
+	font-weight: bold;
+}
+
+span.fieldStatus {
+	font: 12px Arial, Helvetica, sans-serif;
+	color: red;
+	display: block;
+}
+
+table.chart {
+	border: 0px;
+}
+
+/*********
+input { float: left; margin-bottom: 0px; font: normal 1.4em auto Georgia,Times,Times New Roman,sans-serif; border: 0px; }
+label { display: block; width: 60px; float: left; margin-bottom: 6px; color: #880000; font: bold 0.9em auto Georgia,Times,Times New Roman,sans-serif; text-align: left; padding-right: 8px; }
+br { clear: left; }
+input.button { margin: 0.1em; color: #333; background: #cdf; }
+*************/
+textarea {
+	border: 1px solid #999;
+}
+
+div.nostyle,label,input {
+	float: none;
+	color: #000;
+	background: #fff;
+}
+
+.button3 {
+	font: normal 1.4em auto Georgia, Times, Times New Roman, sans-serif;
+	border: 1px solid #006;
+	background: #ccf;
+}
+
+.button3:hover {
+	border: 1px solid #f00;
+	background: #eef;
+}
+
+.button3:disabled {
+	background-color: #8B8B83
+}
+
+.button2 {
+	font: normal 1.4em auto Georgia, Times, Times New Roman, sans-serif;
+	border: 1px solid #006;
+	background: #e1a;
+}
+
+.button2:hover {
+	border: 1px solid #f00;
+	background: #a00;
+}
+div#row0 {
+	letter-spacing: 1px;
+	text-align: right;
+	padding: 8px 0px 4px 5px;
+	vertical-align: middle;
+	border: 0px solid #C1DAD7;
+	background-color: #CAE8EA;
+}
+
+div#row1 {
+	letter-spacing: 1px;
+	text-align: left;
+	padding: 8px 12px 4px 12px;
+	vertical-align: middle;
+	border: 0px solid #C1DAD7;
+	background-color: #CAE8EA;
+}
+
+div#row2 {
+	letter-spacing: 1px;
+	text-align: right;
+	padding: 8px 12px 4px 12px;
+	vertical-align: middle;
+	border: 0px solid #C1DAD7;
+	background-color: #CAE8EA;
+}
+
+
+div.row {
+	letter-spacing: 1px;
+    padding: 8px 12px 4px 12px;
+	text-align: left;
+	vertical-align: middle;
+	border: 0px solid #C1DAD7;
+	background-color: #CAE8EA;
+}
+
+
+.prespan {
+	 padding: 4px 0px 0px 0px;
+     border:2px dotted #d0d0d0;
+}
+
+
+.currspan {
+	padding: 4px 0px 0px 0px;
+	background-color: #d0d0d0;
+}
+
+
+
+
+ul#left {
+	FLOAT: left;
+	MARGIN-LEFT: 5px;
+	WIDTH: 180px
+}
+
+ul#right {
+	FLOAT: left;
+	MARGIN-LEFT: 10px;
+	WIDTH: 180px
+}
+
+span.not_null {
+	font-weight: bold;
+	color: #F12323;
+}
+
+
+label {
+	width: 14em;
+	float: left;
+	text-align: right;
+	margin-right: 0.5em;
+	display: block
+}

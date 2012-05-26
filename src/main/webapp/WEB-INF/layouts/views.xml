@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+	<definition name="standardLayout" template="/WEB-INF/layouts/mcma.jsp" />
+	<definition name="popupLayout" template="/WEB-INF/layouts/popup.jsp" />
+	<definition name="msgLayout" template="/WEB-INF/layouts/mcma-msg.jsp" />
+	<definition name="subMenuLayout" template="/WEB-INF/layouts/mcma-submenu.jsp" />
+	<definition name="iterationLayout" template="/WEB-INF/layouts/mcma-iteration.jsp" />
+</tiles-definitions>

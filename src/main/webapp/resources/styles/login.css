@@ -1,0 +1,45 @@
+.HeaderSub {
+	font-size: 12pt;
+	color: #336699;
+}
+
+.FieldText1 {
+	font-size: 10pt;
+	color: #000000;
+	font-weight: normal;
+	text-align: right;
+}
+
+fieldset.login {
+	width: 600px;
+}
+
+div.info {
+	width: 600px;
+	overflow: auto;
+	border: 1px solid #666;
+	padding: 8px;
+	text-align: left;
+	height: 120px;
+}
+
+div.info1 {
+	width: 600px;
+	overflow: auto;
+	border: 1px solid #666;
+	padding: 8px;
+	text-align: left;
+	height: 80px;
+}
+
+fieldset.info {
+	width: 600px;
+	text-align: left;
+	height: 120px;
+}
+
+fieldset.info1 {
+	width: 600px;
+	text-align: left;
+	height: 80px;
+}

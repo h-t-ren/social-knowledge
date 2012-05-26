@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/security
+           http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+           
+    <security:global-method-security secured-annotations="enabled" /> 
+	<security:http auto-config="true">
+		<!-- Authentication policy -->
+		<security:form-login login-page="/login/login" login-processing-url="/login/login/authenticate"
+			default-target-url="/" authentication-failure-url="/login/login?login_error=1" always-use-default-target="true"/>
+		<security:logout logout-url="/login/logout" logout-success-url="/login/logoutSuccess" />
+	   <!--  <security:intercept-url pattern="/" access="ROLE_USER"/>  -->
+	     <security:intercept-url pattern="/admin" access="ROLE_ADMIN"/>
+	    <security:anonymous/>
+	</security:http>
+        <security:authentication-manager>
+        <security:authentication-provider user-service-ref="userRepository">
+            <security:password-encoder hash="md5">
+                <security:salt-source system-wide="yibayan"/>
+            </security:password-encoder>
+        </security:authentication-provider>
+    </security:authentication-manager>
+   
+    <!-- Automatically receives AuthenticationEvent messages -->
+     <bean id="loggerListener" class="org.springframework.security.authentication.event.LoggerListener"/>
+
+</beans>
