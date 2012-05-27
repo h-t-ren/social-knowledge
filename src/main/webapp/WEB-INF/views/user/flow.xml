@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/webflow 
+		http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">	
+  <secured attributes="ROLE_USER" />
+  <persistence-context />
+	<view-state id="form" view="/user/form" model="user">
+	  <on-entry >           
+	    <evaluate expression="userService.findById(requestParameters.id)" result="viewScope.user" />
+	  </on-entry> 
+      <transition on="save" to="success">
+       <evaluate expression="userService.save(user)" />
+      </transition>
+	</view-state>
+
+	
+   <end-state id="success" view="externalRedirect:/user/list" />
+
+   
+</flow>
