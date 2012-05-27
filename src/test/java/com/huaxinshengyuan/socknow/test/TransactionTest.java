@@ -33,7 +33,7 @@ public class TransactionTest {
     	for(User u: userRepository.findAll())
     	{
     		 System.out.println("user name: " + u.getLogin() +", pass: " + u.getPassword());
-    		 for(User.Roles role : u.getRole())
+    		 for(User.Role role : u.getRoles())
     		 {
     			 System.out.println("Role: " + role.getAuthority());
     		 }

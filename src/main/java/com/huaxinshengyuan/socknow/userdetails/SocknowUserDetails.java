@@ -21,11 +21,7 @@ public class SocknowUserDetails implements UserDetails {
 
     @Override
     public Collection<GrantedAuthority> getAuthorities() {
-        User.Roles[] roles = user.getRole();
-        for(User.Roles r :user.getRole())
-        {
-        	 System.out.println("------------------------------Role: " + r.getAuthority() );
-        }
+        User.Role[] roles = user.getRoles();
         if (roles ==null) return Collections.emptyList();
         return Arrays.<GrantedAuthority>asList(roles);
     }

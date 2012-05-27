@@ -4,34 +4,32 @@ import org.neo4j.graphdb.Direction;
 import org.springframework.data.neo4j.annotation.*;
 import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 import org.springframework.security.core.GrantedAuthority;
-
-import java.io.Serializable;
 import java.util.Set;
 
-@NodeEntity
-public class User implements Serializable {
+import javax.xml.bind.annotation.XmlRootElement;
+
+
+@XmlRootElement(name="user")
+public class User extends KnowledgeNode {
 	private static final long serialVersionUID = 1L;
-
-	@GraphId Long nodeId;
-
     private static final String SALT = "yibayan";
     public static final String FRIEND = "FRIEND";
     public static final String RATED = "RATED";
     @Indexed(indexName="login")
-    String login;
-    String name;
-    String password;
-    String info;
-    private Roles[] roles;
+    private String login;
+    private String name;
+    private String password;
+    private String info;
+    private Role[] roles;
 
     public User() {
     }
 
-    public User(String login, String name, String password, Roles... roles) {
+    public User(String login, String name, String password, Role... role) {
         this.login = login;
         this.name = name;
         this.password = encode(password);
-        this.roles = roles;
+        this.roles = role;
     }
 
     private String encode(String password) {
@@ -59,7 +57,7 @@ public class User implements Serializable {
         return friends;
     }
 
-    public Roles[] getRole() {
+    public Role[] getRoles() {
         return roles;
     }
 
@@ -88,11 +86,13 @@ public class User implements Serializable {
         this.name = name;
     }
 
+
+    
     public boolean isFriend(User other) {
         return other!=null && getFriends().contains(other);
     }
 
-    public enum Roles implements GrantedAuthority {
+    public enum Role implements GrantedAuthority {
         ROLE_USER, ROLE_ADMIN;
         @Override
         public String getAuthority() {
@@ -100,26 +100,19 @@ public class User implements Serializable {
         }
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+	public void setLogin(String login) {
+		this.login = login;
+	}
 
-        User user = (User) o;
-        if (nodeId == null) return super.equals(o);
-        return nodeId.equals(user.nodeId);
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
-    }
+	public void setRoles(Role[] roles) {
+		this.roles = roles;
+	}
 
-    public Long getId() {
-        return nodeId;
-    }
-
-    @Override
-    public int hashCode() {
-
-        return nodeId != null ? nodeId.hashCode() : super.hashCode();
-    }
+  
 
 
 }

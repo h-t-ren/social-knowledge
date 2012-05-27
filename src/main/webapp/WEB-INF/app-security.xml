@@ -9,7 +9,7 @@
            http://www.springframework.org/schema/security/spring-security-3.1.xsd">
            
     <security:global-method-security secured-annotations="enabled" pre-post-annotations="enabled" /> 
-	
+	<security:http pattern="/resources/**" security="none" />
 	<security:http auto-config="true" use-expressions="true" create-session="ifRequired" disable-url-rewriting="true">
 		<!-- Authentication policy -->
 		 <security:form-login login-page="/login/login" login-processing-url="/login/login/authenticate"
