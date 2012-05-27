@@ -15,10 +15,10 @@
 	<bean id="customizableTraceInterceptor" class="com.huaxinshengyuan.socknow.aop.TraceInterceptor"
 		p:enterMessage="Entering $[targetClassShortName].$[methodName]($[arguments])"
 		p:exitMessage="Leaving $[targetClassShortName].$[methodName](): $[returnValue]"/>
-
+<!-- 
 	<aop:config>
 	  <aop:advisor advice-ref="customizableTraceInterceptor" pointcut="execution(public * com.huaxinshengyuan.socknow.service..*(..))"/>
 	  <aop:advisor advice-ref="customizableTraceInterceptor" pointcut="execution(public * com.huaxinshengyuan.socknow.controller..*(..))"/>
 	</aop:config>
-
+ -->
 </beans>

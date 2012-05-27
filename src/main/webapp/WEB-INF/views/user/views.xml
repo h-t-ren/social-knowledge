@@ -5,8 +5,12 @@
 	
 <tiles-definitions>
 	
-	<definition name="user/list" extends="standardLayout">
+	<definition name="/user/list" extends="standardLayout">
 		<put-attribute name="body" value="/WEB-INF/views/user/list.jsp" />
+	</definition>
+	
+	<definition name="/user/form" extends="standardLayout">
+		<put-attribute name="body" value="/WEB-INF/views/user/form.jsp" />
 	</definition>
 	
 </tiles-definitions>

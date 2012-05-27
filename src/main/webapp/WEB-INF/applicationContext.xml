@@ -43,7 +43,11 @@
 				</bean>
 				<bean
 					class="org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean">
-					<property name="name" value="users" />
+					<property name="name" value="usersCache" />
+				</bean>
+					<bean
+					class="org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean">
+					<property name="name" value="userCache" />
 				</bean>
 			</set>
 		</property>

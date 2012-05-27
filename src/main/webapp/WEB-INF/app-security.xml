@@ -12,9 +12,18 @@
 	<security:http pattern="/resources/**" security="none" />
 	<security:http auto-config="true" use-expressions="true" create-session="ifRequired" disable-url-rewriting="true">
 		<!-- Authentication policy -->
+		
+		
+		<!-- 
 		 <security:form-login login-page="/login/login" login-processing-url="/login/login/authenticate"
 			default-target-url="/" authentication-failure-url="/login/login?login_error=1" always-use-default-target="true"/>
-		<security:logout logout-url="/login/logout" logout-success-url="/login/logoutSuccess" />
+		  -->
+		  <security:form-login login-page="/login/login" login-processing-url="/login/login/authenticate"
+			authentication-failure-url="/login/login?login_error=1" />
+		 
+		 
+		 
+		 <security:logout logout-url="/login/logout" logout-success-url="/login/logoutSuccess" />
 	    
 	      <security:intercept-url pattern="/login/**" access="permitAll"/>
 	       <security:intercept-url pattern="/**" access="isAuthenticated()"/>
