@@ -34,7 +34,7 @@ $('#highlight').dataTable(
                 <td>${user.password}</td>
                 <td>${user.roles}</td>
            
-               <td> <a href="<c:url value="/user/edit/${user.id}" />">
+               <td> <a href="<c:url value="/userForm?id=${user.id}" />">
                  <img src="<c:url value="/resources/images/crud/edit.png"/>" title="Edit this user" />
                </a>
                </td>

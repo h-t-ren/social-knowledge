@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.huaxinshengyuan.socknow.domain.User;
 import com.huaxinshengyuan.socknow.domain.xml.Users;
@@ -44,8 +45,6 @@ public class UserController {
 		}
 		
 	}
-	
-
 
 	@RequestMapping(value = USER_LIST, method = RequestMethod.GET, headers = "Accept=application/xml, application/json")
 	public @ResponseBody Users getAllUsers() {
@@ -61,7 +60,7 @@ public class UserController {
 		model.addAttribute("users", users);
 		return USER_LIST;
 	}
-	
+	/***
 	@RequestMapping(value = USER_EDIT, method = RequestMethod.GET, headers="Accept=application/html, application/xhtml+xml")
 	public String  getUser(@PathVariable Long id, Model model) {
 		model.addAttribute("user", userService.findById(id));
@@ -75,4 +74,5 @@ public class UserController {
 		//userService.save(user);
 		return "redirect:"+USER_LIST;
 	}
+	**/
 }

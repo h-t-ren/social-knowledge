@@ -18,7 +18,8 @@
 		<div class="hr">
 			<!-- spanner -->
 		</div>
-		  <input type="submit" name="submit" value="Submit" />
+		
+		<button type="submit" name="_eventId_save">Save</button>
    </div>
       
     </fieldset>
