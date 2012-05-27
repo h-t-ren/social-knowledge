@@ -10,6 +10,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.huaxinshengyuan.socknow.domain.User;
+import com.huaxinshengyuan.socknow.domain.enums.Role;
 import com.huaxinshengyuan.socknow.repo.UserRepository;
 
 import static org.junit.Assert.assertEquals;
@@ -33,7 +34,7 @@ public class TransactionTest {
     	for(User u: userRepository.findAll())
     	{
     		 System.out.println("user name: " + u.getLogin() +", pass: " + u.getPassword());
-    		 for(User.Role role : u.getRoles())
+    		 for(Role role : u.getRoles())
     		 {
     			 System.out.println("Role: " + role.getAuthority());
     		 }

@@ -16,7 +16,7 @@ $('#highlight').dataTable(
   <table class="display" id="highlight">
         <thead>
           <tr>
-            <th>nodeId</th>
+            <th>Id</th>
             <th>Name</th>
             <th>Login</th>
             <th>Password</th>
@@ -28,13 +28,13 @@ $('#highlight').dataTable(
        
         <c:forEach var="user" items="${users.user}">
             <tr>
-                <td>${user.nodeId}</td>
+                <td>${user.id}</td>
                 <td>${user.name}</td>
                 <td>${user.login}</td>
                 <td>${user.password}</td>
                 <td>${user.roles}</td>
            
-               <td> <a href="<c:url value="/user/${user.nodeId}" />">
+               <td> <a href="<c:url value="/user/${user.id}" />">
                  <img src="<c:url value="/resources/images/crud/edit.png"/>" title="Edit this user" />
                </a>
                </td>

@@ -221,6 +221,13 @@
 		<scope>compile</scope>
 	</dependency>
 		
+		
+			<dependency>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache</artifactId>
+			<version>1.6.2</version>
+		</dependency>
+		
 	<!-- Logger -->
     <dependency>
     	<groupId>log4j</groupId>

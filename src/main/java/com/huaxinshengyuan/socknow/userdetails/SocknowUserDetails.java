@@ -4,6 +4,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.huaxinshengyuan.socknow.domain.User;
+import com.huaxinshengyuan.socknow.domain.enums.Role;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -21,7 +22,7 @@ public class SocknowUserDetails implements UserDetails {
 
     @Override
     public Collection<GrantedAuthority> getAuthorities() {
-        User.Role[] roles = user.getRoles();
+        Role[] roles = user.getRoles();
         if (roles ==null) return Collections.emptyList();
         return Arrays.<GrantedAuthority>asList(roles);
     }

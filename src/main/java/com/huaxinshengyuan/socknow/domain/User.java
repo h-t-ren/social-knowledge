@@ -1,17 +1,18 @@
 package com.huaxinshengyuan.socknow.domain;
 
 import org.neo4j.graphdb.Direction;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.neo4j.annotation.*;
 import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
-import org.springframework.security.core.GrantedAuthority;
+import com.huaxinshengyuan.socknow.domain.enums.Role;
 import java.util.Set;
-
 import javax.xml.bind.annotation.XmlRootElement;
 
 
+@SuppressWarnings("serial")
 @XmlRootElement(name="user")
 public class User extends KnowledgeNode {
-	private static final long serialVersionUID = 1L;
+
     private static final String SALT = "yibayan";
     public static final String FRIEND = "FRIEND";
     public static final String RATED = "RATED";
@@ -21,6 +22,9 @@ public class User extends KnowledgeNode {
     private String password;
     private String info;
     private Role[] roles;
+    
+    @Autowired
+    private  Md5PasswordEncoder md5Encoder;
 
     public User() {
     }
@@ -33,7 +37,7 @@ public class User extends KnowledgeNode {
     }
 
     private String encode(String password) {
-        return new Md5PasswordEncoder().encodePassword(password, SALT);
+        return  md5Encoder.encodePassword(password, SALT);
     }
 
 
@@ -86,19 +90,11 @@ public class User extends KnowledgeNode {
         this.name = name;
     }
 
-
-    
     public boolean isFriend(User other) {
         return other!=null && getFriends().contains(other);
     }
 
-    public enum Role implements GrantedAuthority {
-        ROLE_USER, ROLE_ADMIN;
-        @Override
-        public String getAuthority() {
-            return name();
-        }
-    }
+
 
 	public void setLogin(String login) {
 		this.login = login;
