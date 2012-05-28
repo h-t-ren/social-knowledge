@@ -8,7 +8,11 @@ import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.huaxinshengyuan.socknow.domain.Group;
 import com.huaxinshengyuan.socknow.domain.User;
+import com.huaxinshengyuan.socknow.domain.UserInGroup;
+import com.huaxinshengyuan.socknow.domain.enums.UserType;
+import com.huaxinshengyuan.socknow.domain.relation.RelationType;
 import com.huaxinshengyuan.socknow.repo.UserRepository;
 
 @Service("userService") @Transactional(readOnly=true)
@@ -42,5 +46,12 @@ public class UserServiceImpl implements UserService{
     	String md5Hash = md5.encodePassword(password, SALT);
         return  md5Hash;
     }
+
+	@Override  @Transactional 
+	public UserInGroup joinInGroup(User user,Group group, UserType userType) {
+		UserInGroup userInGroup = userRepository.createRelationshipBetween(user, group, UserInGroup.class, RelationType.UserInGroup);
+		userInGroup.setUserType(userType);
+		return userInGroup;
+	}
 
 }

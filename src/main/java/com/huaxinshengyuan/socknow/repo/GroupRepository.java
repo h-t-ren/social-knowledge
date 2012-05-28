@@ -2,10 +2,10 @@ package com.huaxinshengyuan.socknow.repo;
 
 import org.springframework.data.neo4j.repository.GraphRepository;
 import org.springframework.data.neo4j.repository.RelationshipOperationsRepository;
-import com.huaxinshengyuan.socknow.domain.User;
+import com.huaxinshengyuan.socknow.domain.Group;
 
 
-public interface UserRepository extends GraphRepository<User>,
-        RelationshipOperationsRepository<User> {
+public interface GroupRepository extends GraphRepository<Group>,
+        RelationshipOperationsRepository<Group> {
    
 }
