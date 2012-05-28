@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 
-@ContextConfiguration(locations = "classpath:spring/applicationContext.xml")
+@ContextConfiguration({"/socknow-test-context.xml"})
 @RunWith(SpringJUnit4ClassRunner.class)
 @Transactional
 public class PublRepositoryTest

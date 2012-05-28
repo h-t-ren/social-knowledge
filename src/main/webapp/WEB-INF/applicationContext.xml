@@ -53,6 +53,6 @@
 		</property>
 	</bean>
 	
-	<bean id="md5Encoder" class="org.springframework.security.authentication.encoding.Md5PasswordEncoder" />  
+	 <bean id="md5Encoder" class="org.springframework.security.authentication.encoding.Md5PasswordEncoder" />
     
 </beans>

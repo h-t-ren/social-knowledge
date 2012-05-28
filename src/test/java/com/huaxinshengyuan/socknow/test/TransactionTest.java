@@ -1,19 +1,19 @@
 package com.huaxinshengyuan.socknow.test;
 
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.DirtiesContext;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.huaxinshengyuan.socknow.domain.User;
 import com.huaxinshengyuan.socknow.domain.enums.Role;
 import com.huaxinshengyuan.socknow.repo.UserRepository;
-
-import static org.junit.Assert.assertEquals;
+import com.huaxinshengyuan.socknow.service.UserService;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -22,14 +22,22 @@ import static org.junit.Assert.assertEquals;
 public class TransactionTest {
 
     @Autowired UserRepository userRepository;
+    @Autowired UserService userService;
   
 
-    @Test
+    @Test @Transactional @Rollback(false)
     public void testBefriendUsers() {
-       // final User me = userRepository.save(new User("hongtao", "hongtao", "hongtao", User.Roles.ROLE_USER));
-      //  final User you = userRepository.save(new User("you", "you", "you"));
+    	
+    	
+    	
+    	User hongtao = new User("hongtao", "hongtao", "hongtao", Role.ROLE_USER,Role.ROLE_ADMIN);
+    	userService.register(hongtao);
+        //  final User me = userRepository.save(new User("hongtao", "hongtao", "hongtao", Role.ROLE_USER,Role.ROLE_ADMIN));
+        //   final User you = userRepository.save(new User("you", "you", "you"));
       //   userRepository.addFriend("you", userRepository.getUserFromSession());
      //    final User loaded = userRepository.findOne(me.getId());
+    	
+    	
     	
     	for(User u: userRepository.findAll())
     	{

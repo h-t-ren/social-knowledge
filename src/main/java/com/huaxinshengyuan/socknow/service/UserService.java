@@ -18,5 +18,7 @@ public interface UserService {
 	
 	@CacheEvict(value="usersCache", allEntries=true)
 	public void save(User user);
+	
+	public void register(User user);
 
 }

@@ -3,7 +3,6 @@ package com.huaxinshengyuan.socknow.domain;
 import java.io.Serializable;
 
 import org.springframework.data.neo4j.annotation.GraphId;
-
 @SuppressWarnings("serial")
 public abstract class KnowledgeEntity implements Serializable {
 

@@ -42,15 +42,17 @@
 	</listener>
 
 	<!-- Enables use of HTTP methods PUT and DELETE -->
-	<filter>
-		<filter-name>httpMethodFilter</filter-name>
-		<filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+
+		<filter>
+		<filter-name>httpPutMethodFilter</filter-name>
+		<filter-class>org.springframework.web.filter.HttpPutFormContentFilter</filter-class>
 	</filter>
 
 	<filter-mapping>
-		<filter-name>httpMethodFilter</filter-name>
-		<url-pattern>/*</url-pattern>
+		<filter-name>httpPutMethodFilter</filter-name>
+	    <servlet-name>socknow</servlet-name>
 	</filter-mapping>
+	
 
 	<!-- Secures the application -->
 	  <filter>

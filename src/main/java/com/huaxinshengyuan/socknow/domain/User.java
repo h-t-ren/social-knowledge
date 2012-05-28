@@ -1,9 +1,9 @@
 package com.huaxinshengyuan.socknow.domain;
 
 import org.neo4j.graphdb.Direction;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.neo4j.annotation.*;
-import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
+import org.springframework.data.neo4j.annotation.Fetch;
+import org.springframework.data.neo4j.annotation.Indexed;
+import org.springframework.data.neo4j.annotation.RelatedTo;
 import com.huaxinshengyuan.socknow.domain.enums.Role;
 import java.util.Set;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -13,18 +13,18 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name="user")
 public class User extends KnowledgeNode {
 
-    private static final String SALT = "yibayan";
+
     public static final String FRIEND = "FRIEND";
     public static final String RATED = "RATED";
-    @Indexed(indexName="login")
+    @Indexed(indexName="login", unique=true)
     private String login;
     private String name;
-    private String password;
-    private String info;
+	private String password;
+   
+
+	private String info;
     private Role[] roles;
     
-    @Autowired
-    private  Md5PasswordEncoder md5Encoder;
 
     public User() {
     }
@@ -32,13 +32,10 @@ public class User extends KnowledgeNode {
     public User(String login, String name, String password, Role... role) {
         this.login = login;
         this.name = name;
-        this.password = encode(password);
+        this.password = password;
         this.roles = role;
     }
 
-    private String encode(String password) {
-        return  md5Encoder.encodePassword(password, SALT);
-    }
 
 
     @RelatedTo(type = FRIEND, direction = Direction.BOTH)
@@ -73,6 +70,9 @@ public class User extends KnowledgeNode {
     public String getPassword() {
         return password;
     }
+    public void setPassword(String password) {
+		this.password = password;
+	}
 
 	public String getInfo() {
 		return info;
@@ -80,11 +80,6 @@ public class User extends KnowledgeNode {
 	public void setInfo(String info) {
 		this.info = info;
 	}
-    public void updatePassword(String old, String newPass1, String newPass2) {
-        if (!password.equals(encode(old))) throw new IllegalArgumentException("Existing Password invalid");
-        if (!newPass1.equals(newPass2)) throw new IllegalArgumentException("New Passwords don't match");
-        this.password = encode(newPass1);
-    }
 
     public void setName(String name) {
         this.name = name;
@@ -100,9 +95,7 @@ public class User extends KnowledgeNode {
 		this.login = login;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+
 
 	public void setRoles(Role[] roles) {
 		this.roles = roles;

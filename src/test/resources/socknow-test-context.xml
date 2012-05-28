@@ -18,4 +18,5 @@
     <bean id="graphDatabaseService" class="org.neo4j.test.ImpermanentGraphDatabase" destroy-method="shutdown"/>
     -->
     <tx:annotation-driven mode="proxy"/>
+    <bean id="md5Encoder" class="org.springframework.security.authentication.encoding.Md5PasswordEncoder" />
 </beans>

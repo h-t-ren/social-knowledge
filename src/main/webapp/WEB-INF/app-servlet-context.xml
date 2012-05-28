@@ -44,7 +44,8 @@
 			</value>
 		</property>
 	</bean>
-	<bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter" />
+	<!--  <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter" />-->
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
 	<import resource="app-webflow.xml" />
     <import resource="i18n.xml" />
         	<!--
