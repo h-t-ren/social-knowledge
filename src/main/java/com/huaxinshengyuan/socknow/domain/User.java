@@ -5,9 +5,7 @@ import org.neo4j.helpers.collection.IteratorUtil;
 import org.springframework.data.neo4j.annotation.Fetch;
 import org.springframework.data.neo4j.annotation.Indexed;
 import org.springframework.data.neo4j.annotation.RelatedToVia;
-import org.springframework.data.neo4j.template.Neo4jOperations;
 import com.huaxinshengyuan.socknow.domain.enums.Role;
-import com.huaxinshengyuan.socknow.domain.enums.UserType;
 import com.huaxinshengyuan.socknow.domain.index.FieldIndex;
 import com.huaxinshengyuan.socknow.domain.relation.RelationType;
 import java.util.Collection;
@@ -61,7 +59,6 @@ public class User extends KnowledgeNode {
     
 	
 	/******** Relations************/
-	
     @RelatedToVia(type=RelationType.UserInGroup,direction=Direction.OUTGOING)@Fetch
     Iterable<UserInGroup> userInGroups;
     

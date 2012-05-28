@@ -5,8 +5,11 @@ import java.util.Collection;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import com.huaxinshengyuan.socknow.domain.Group;
+import com.huaxinshengyuan.socknow.domain.Publication;
 import com.huaxinshengyuan.socknow.domain.User;
 import com.huaxinshengyuan.socknow.domain.UserInGroup;
+import com.huaxinshengyuan.socknow.domain.UserSecurePublication;
+import com.huaxinshengyuan.socknow.domain.enums.Permission;
 import com.huaxinshengyuan.socknow.domain.enums.UserType;
 
 public interface UserService {
@@ -24,4 +27,5 @@ public interface UserService {
 	
 	public  UserInGroup joinInGroup(User user,Group group,UserType userType);
 
+	public  UserSecurePublication accessPublication(User user,Publication publication,Permission permission);
 }

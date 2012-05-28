@@ -23,19 +23,19 @@ public class UserRestController {
 	private Logger log = LoggerFactory.getLogger(this.getClass());
 	@Autowired private UserService userService;
 
-	@RequestMapping(value = LogicVeiws.USER_LIST, method = RequestMethod.GET, headers = "Accept=application/xml, application/json")
+	@RequestMapping(value = LogicVeiws.USER_LIST, method = RequestMethod.GET, headers=HttpHeaders.JSON_XML)
 	public @ResponseBody Users getAllUsers() {
 		Users users = new Users();
 		users.setUser(userService.findUsers());
 		return users;
 	}
 
-	@RequestMapping(value = LogicVeiws.USER_EDIT, method = RequestMethod.GET, headers = "Accept=application/xml, application/json")
+	@RequestMapping(value = LogicVeiws.USER_EDIT, method = RequestMethod.GET, headers=HttpHeaders.JSON_XML)
 	public @ResponseBody User getUser(@PathVariable Long id, Model model) {
 		return userService.findById(id);
 	}
 	
-	@RequestMapping(value = LogicVeiws.USER_EDIT, method = RequestMethod.PUT, headers="Accept=application/xml, application/json")
+	@RequestMapping(value = LogicVeiws.USER_EDIT, method = RequestMethod.PUT, headers=HttpHeaders.JSON_XML)
 	public  @ResponseBody User  saveUser(@PathVariable Long id, @RequestBody User user) {
 		userService.save(user);
 		return user;

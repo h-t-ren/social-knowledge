@@ -1,11 +1,18 @@
 package com.huaxinshengyuan.socknow.service;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.neo4j.fieldaccess.DynamicProperties;
+import org.springframework.data.neo4j.fieldaccess.DynamicPropertiesContainer;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.huaxinshengyuan.socknow.domain.Group;
+import com.huaxinshengyuan.socknow.domain.Publication;
 import com.huaxinshengyuan.socknow.domain.User;
+import com.huaxinshengyuan.socknow.domain.enums.Fields;
+import com.huaxinshengyuan.socknow.domain.enums.Permission;
 import com.huaxinshengyuan.socknow.domain.enums.Role;
 import com.huaxinshengyuan.socknow.domain.enums.UserType;
 
@@ -16,6 +23,7 @@ public class AppInitServiceImpl implements AppInitService {
 
 	@Autowired UserService userService;
 	@Autowired GroupService groupService;
+	@Autowired PublicationService publicationService;
 	
 	@Override
 	public void init() {
@@ -51,7 +59,27 @@ public class AppInitServiceImpl implements AppInitService {
 		userService.register(hongbin);
 		userService.joinInGroup(hongbin, tiejuLab, UserType.USER);
 		
+		//join Tieju's lab
+		userService.joinInGroup(hongtao, tiejuLab, UserType.USER);
 		
+		//upload some publications
+		Publication onto_con = new Publication();
+		onto_con.setBibtexId("renh:2012_1");
+		onto_con.setTitle("Ontology construction and its applications in local research communities");
+		onto_con.setCreated(new Date());
+		onto_con.setUser(hongtao);
+		onto_con.setAbs("Ontology engineering has been widely used for divers purposes in different communitie and numbers of apptoaches have been reported for developing ontologies; however, ...");
+		
+		DynamicProperties onto_dyn = new DynamicPropertiesContainer();
+		onto_dyn.setProperty(Fields.pages.name(), "pp.279-317");
+		onto_dyn.setProperty(Fields.year.name(), "2012");
+		onto_dyn.setProperty(Fields.journal.name(), "Modeling for decision support in network-based service");
+		onto_con.setDynamicProperties(onto_dyn);
+		publicationService.save(onto_con);
+		
+		
+		userService.accessPublication(yangyang, onto_con, Permission.ALL);
+		groupService.accessPublication(tiejuLab, onto_con, Permission.READ);
 		
 	}
 

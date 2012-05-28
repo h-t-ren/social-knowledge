@@ -20,7 +20,7 @@ public class UserController {
 	@Autowired private UserService userService;
 	
 
-	@RequestMapping(value = LogicVeiws.USER_LIST, method = RequestMethod.GET, headers="Accept=application/html, application/xhtml+xml")
+	@RequestMapping(value = LogicVeiws.USER_LIST, method = RequestMethod.GET, headers=HttpHeaders.HTML)
 	public String  getAllUsers(Model model) {
 		Users users = new Users();
 		users.setUser(userService.findUsers());
