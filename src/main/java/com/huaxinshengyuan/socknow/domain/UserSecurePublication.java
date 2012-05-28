@@ -5,6 +5,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 import org.springframework.data.neo4j.annotation.EndNode;
 import org.springframework.data.neo4j.annotation.StartNode;
 
+import com.huaxinshengyuan.socknow.domain.enums.Permission;
+
 
 @XmlRootElement(name="userSecurePublication")
 @SuppressWarnings("serial")
@@ -12,7 +14,7 @@ public class UserSecurePublication extends KnowledgeRelation{
 
 	@StartNode private User user;
 	@EndNode private Publication publication;
-	private String permission;
+	private Permission permission;
 	public User getUser() {
 		return user;
 	}
@@ -25,10 +27,10 @@ public class UserSecurePublication extends KnowledgeRelation{
 	public void setPublication(Publication publication) {
 		this.publication = publication;
 	}
-	public String getPermission() {
+	public Permission getPermission() {
 		return permission;
 	}
-	public void setPermission(String permission) {
+	public void setPermission(Permission permission) {
 		this.permission = permission;
 	}
 

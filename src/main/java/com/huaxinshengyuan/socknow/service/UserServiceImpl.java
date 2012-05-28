@@ -65,7 +65,7 @@ public class UserServiceImpl implements UserService{
 	public UserSecurePublication accessPublication(User user,
 			Publication publication, Permission permission) {
 		UserSecurePublication securePublication = template.createRelationshipBetween(user, publication, UserSecurePublication.class,  RelationType.UserSecuredPublication, false);
-		securePublication.setPermission(permission.name());
+		securePublication.setPermission(permission);
 		template.save(securePublication);
 		return securePublication;
 	}
