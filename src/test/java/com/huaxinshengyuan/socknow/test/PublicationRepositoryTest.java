@@ -23,10 +23,8 @@ public class PublicationRepositoryTest {
 	@Test
     public void testPublRepo() {
 
-		
-		//Page<Publication> pp = publicationRepository.findByTitleLike("Ontology construction", new PageRequest(0, 10));
-    	
-    	for(Publication p:publicationRepository.findAllByQuery(FieldIndex.PUBL_FULL_INDEX, "abs","Ontology construction"))
+
+    	for(Publication p:publicationRepository.findAllByQuery(FieldIndex.PUBL_FULL_INDEX, "abs","engineering"))
     	{
     		log.debug("p: " + p.getTitle() + ", per: " +p.getId()) ;
     	}

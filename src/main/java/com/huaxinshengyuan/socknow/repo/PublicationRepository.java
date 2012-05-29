@@ -9,4 +9,5 @@ import com.huaxinshengyuan.socknow.domain.Publication;
 
 public interface PublicationRepository extends GraphRepository<Publication>,NamedIndexRepository<Publication>,
         RelationshipOperationsRepository<Publication> {
+	//public Page<Publication> findByTitleLike(String title, Pageable pageRequest);
 }
