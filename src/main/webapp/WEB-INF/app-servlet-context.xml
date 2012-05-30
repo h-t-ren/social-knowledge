@@ -15,7 +15,7 @@
     <context:component-scan base-package="com.huaxinshengyuan.socknow.controller"/>
 	<!-- Configures the Spring MVC @Controller programming model -->
 	<mvc:annotation-driven/>
-	<mvc:view-controller path="/" view-name="home"/> 		
+	<mvc:view-controller path="/" view-name="home"/> 	
 	<mvc:view-controller path="/login/login" />
 	<mvc:view-controller path="/login/logout" />
 	<mvc:view-controller path="/login/logoutSuccess" />  

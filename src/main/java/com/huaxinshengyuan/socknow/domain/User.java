@@ -58,8 +58,8 @@ public class User extends KnowledgeNode {
 	 }
     
 	
-	/******** Relations************/
-    @RelatedToVia(type=RelationType.UserInGroup,direction=Direction.OUTGOING)@Fetch
+	
+    @RelatedToVia(type=RelationType.UserInGroup,direction=Direction.OUTGOING)
     Iterable<UserInGroup> userInGroups;
     
     public Collection<UserInGroup> getUserInGroups()
@@ -67,8 +67,7 @@ public class User extends KnowledgeNode {
     	return IteratorUtil.asCollection(userInGroups);
     }
 
-  
-  
+
 
 
 }

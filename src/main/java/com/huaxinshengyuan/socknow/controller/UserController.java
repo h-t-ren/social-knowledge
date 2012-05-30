@@ -8,7 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import com.huaxinshengyuan.socknow.domain.xml.Users;
+
+import com.huaxinshengyuan.socknow.domain.rest.Users;
 import com.huaxinshengyuan.socknow.service.UserService;
 
 
@@ -20,7 +21,7 @@ public class UserController {
 	@Autowired private UserService userService;
 	
 
-	@RequestMapping(value = LogicVeiws.USER_LIST, method = RequestMethod.GET, headers=HttpHeaders.HTML)
+	@RequestMapping(value = LogicRequest.USER_LIST, method = RequestMethod.GET, headers=HttpHeaders.HTML)
 	public String  getAllUsers(Model model) {
 		Users users = new Users();
 		users.setUser(userService.findUsers());

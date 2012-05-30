@@ -5,4 +5,5 @@
 <tiles-definitions>
 	<definition name="standardLayout" template="/WEB-INF/layouts/main-layout.jsp" />
 	<definition name="subMenuLayout" template="/WEB-INF/layouts/submenu-layout.jsp" />
+	<definition name="graphLayout" template="/WEB-INF/layouts/graph-layout.jsp" />
 </tiles-definitions>

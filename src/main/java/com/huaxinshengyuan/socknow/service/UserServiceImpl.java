@@ -1,9 +1,12 @@
 package com.huaxinshengyuan.socknow.service;
 
 import java.util.Collection;
+import java.util.List;
 
+import org.neo4j.graphdb.DynamicRelationshipType;
 import org.neo4j.helpers.collection.IteratorUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.neo4j.annotation.Query;
 import org.springframework.data.neo4j.template.Neo4jOperations;
 import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -68,6 +71,16 @@ public class UserServiceImpl implements UserService{
 		securePublication.setPermission(permission);
 		template.save(securePublication);
 		return securePublication;
+	}
+
+	@Override
+	public void makeFriends(User u1, User u2) {
+		template.getNode(u1.getId()).createRelationshipTo(template.getNode(u2.getId()), DynamicRelationshipType.withName(RelationType.UserHasFriend));
+	}
+
+	@Override
+	public List<User> findFriends(User u) {
+		return userRepository.findFriends(u);
 	}
 
 }

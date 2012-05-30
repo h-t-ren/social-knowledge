@@ -9,5 +9,8 @@
 		<put-attribute name="body" value="/WEB-INF/views/home.jsp" />
 	</definition>
 	
+	<definition name="/graph" extends="graphLayout">
+		<put-attribute name="body" value="/WEB-INF/views/graph.jsp" />
+	</definition>
 	
 </tiles-definitions>

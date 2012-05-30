@@ -16,4 +16,8 @@ public interface UserRepository extends GraphRepository<User>,
     @Query("start user=node({0})"+
     " match user-[r:"+RelationType.UserSecuredPublication+"]->publication return publication, r.permission")
 	public List<PublicationPermission> getPublicationPermission(User user); 
+    
+    @Query("start user=node({0})"+
+		    " match user-[r:"+RelationType.UserHasFriend+"]-f return f")
+    public List<User> findFriends(User u);
 }

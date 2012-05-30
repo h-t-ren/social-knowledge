@@ -24,7 +24,7 @@ public class Publication extends KnowledgeNode
     private Date created;
     private Date lastModified;
     private String bib;
-    private DynamicProperties dynamicProperties;
+    private DynamicProperties dyn;
     
 	@RelatedTo(type=RelationType.UserOwnedPublication, direction = Direction.INCOMING)
     private User user;
@@ -110,16 +110,6 @@ public class Publication extends KnowledgeNode
 
 
 
-	public DynamicProperties getDynamicProperties() {
-		return dynamicProperties;
-	}
-
-
-
-	public void setDynamicProperties(DynamicProperties dynamicProperties) {
-		this.dynamicProperties = dynamicProperties;
-	}
-
 
 
 	public User getUser() {
@@ -142,6 +132,18 @@ public class Publication extends KnowledgeNode
 
 	public void setModifier(User modifier) {
 		this.modifier = modifier;
+	}
+
+
+
+	public DynamicProperties getDyn() {
+		return dyn;
+	}
+
+
+
+	public void setDyn(DynamicProperties dyn) {
+		this.dyn = dyn;
 	}
     
 

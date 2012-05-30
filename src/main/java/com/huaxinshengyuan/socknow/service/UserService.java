@@ -1,6 +1,7 @@
 package com.huaxinshengyuan.socknow.service;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
@@ -28,4 +29,8 @@ public interface UserService {
 	public  UserInGroup joinInGroup(User user,Group group,UserType userType);
 
 	public  UserSecurePublication accessPublication(User user,Publication publication,Permission permission);
+	
+	public void makeFriends(User u1,User u2);
+	
+	public List<User> findFriends(User u);
 }

@@ -13,6 +13,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.huaxinshengyuan.socknow.domain.User;
+import com.huaxinshengyuan.socknow.domain.UserInGroup;
 import com.huaxinshengyuan.socknow.domain.index.FieldIndex;
 import com.huaxinshengyuan.socknow.domain.mapper.PublicationPermission;
 import com.huaxinshengyuan.socknow.repo.UserRepository;
@@ -28,11 +29,17 @@ public class UserRepositoryTest {
     @Test
     public void testUserRepo() {
     	User user = userRepository.findByPropertyValue(FieldIndex.LOGIN,"yangyang");
+    	
+    	for(UserInGroup ug: user.getUserInGroups())
+    	{
+    		log.debug("---------: " + ug.getGroup().getName());
+    	}
+    	
     	log.debug("user name: " + user.getName() +", pass: " + user.getPassword() +",id=" +user.getId());
     	List<PublicationPermission> pp= userRepository.getPublicationPermission(user);
     	for(PublicationPermission p:pp)
     	{
-    		log.debug("p: " + p.getPublication().getTitle() + ", per: " +p.getPerssion()) ;
+    		log.debug("p: " + p.getPublication().getTitle() + ", per: " +p.getPerssion());
     	}
     	
     }
