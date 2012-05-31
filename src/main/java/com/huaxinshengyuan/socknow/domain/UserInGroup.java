@@ -11,7 +11,7 @@ import com.huaxinshengyuan.socknow.domain.enums.UserType;
 public class UserInGroup extends KnowledgeRelation{
 	
 	@StartNode private User user;
-	@EndNode private Group group;
+	@EndNode  private Group group;
 	private UserType userType;
 	public User getUser() {
 		return user;

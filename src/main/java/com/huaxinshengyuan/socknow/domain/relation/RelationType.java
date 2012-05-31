@@ -25,6 +25,7 @@ public  class  RelationType{
 	public final static String DocumentHasParent="DocumentHasParent";
 	public final static String UserCommentOn="UserCommentOn";
 	public final static String UserFavoritePublication="UserFavoritePublication";
+	public final static String UserIsAuthor="UserIsAuthor";
 	public final static String KeywordSimilarity="KeywordSimilarity";
 	public final static String PublicationHasPublisher="PublicationHasPublisher";
 	public final static String PublicationHasField="PublicationHasField";

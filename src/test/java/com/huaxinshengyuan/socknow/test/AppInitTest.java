@@ -21,7 +21,7 @@ import com.huaxinshengyuan.socknow.service.AppInitService;
 public class AppInitTest
 {
 
-   @Autowired private AppInitService appInitService;
+    @Autowired private AppInitService appInitService;
 
 	@Autowired private GraphDatabaseService graphDatabaseService;
 
@@ -36,7 +36,7 @@ public class AppInitTest
     @Test @Transactional @Rollback(false)
     public void populateDatabase()
     {
-    	appInitService.init();
+    	appInitService.initDb();
     }
 
    

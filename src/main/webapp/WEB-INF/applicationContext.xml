@@ -22,10 +22,10 @@
  
  	
  	<!-- Imports logging configuration -->
-	<import resource="trace-context.xml"/>
+	<!--<import resource="trace-context.xml"/>-->
 	
 	<!-- Imports datasource configuration -->
-	<import resource="neo-data.xml"/>
+	 <import resource="neo-data.xml"/>
 	
 	<bean id="prop" class="org.springframework.beans.factory.config.PropertiesFactoryBean"
         p:location="/WEB-INF/application.properties" />

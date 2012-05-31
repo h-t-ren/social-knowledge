@@ -1,19 +1,14 @@
 package com.huaxinshengyuan.socknow.domain;
-
-
-
 import javax.xml.bind.annotation.XmlRootElement;
 import org.springframework.data.neo4j.annotation.Indexed;
 import com.huaxinshengyuan.socknow.domain.enums.Role;
 import com.huaxinshengyuan.socknow.domain.index.FieldIndex;
 
-
-
 @SuppressWarnings("serial")
 @XmlRootElement(name="group")
 public class Group extends KnowledgeNode {
 	
-	@Indexed(indexName=FieldIndex.GROUP_NAME, unique=true) private String name;
+	@Indexed(unique=true) private String name;
 	private String description;
     private Role[] roles;
     

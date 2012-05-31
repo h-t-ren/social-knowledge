@@ -26,7 +26,7 @@ public class PublicationRepositoryTest {
 
     	for(Publication p:publicationRepository.findAllByQuery(FieldIndex.PUBL_FULL_INDEX, "abs","engineering"))
     	{
-    		log.debug("p: " + p.getTitle() + ", per: " +p.getId()) ;
+    		log.debug("p: " + p.getTitle() + ", per: " +p.getId() +", user: " + p.getUser().getName()) ;
     	}
     	
     }

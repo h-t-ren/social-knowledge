@@ -9,7 +9,7 @@ import com.huaxinshengyuan.socknow.domain.enums.Permission;
 
 
 @XmlRootElement(name="userSecurePublication")
-@SuppressWarnings("serial")
+@SuppressWarnings("serial") 
 public class UserSecurePublication extends KnowledgeRelation{
 
 	@StartNode private User user;
