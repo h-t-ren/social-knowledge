@@ -16,8 +16,7 @@ import com.huaxinshengyuan.socknow.service.AppInitService;
 
 
 @ContextConfiguration({"/socknow-test-context.xml"})
-@RunWith(SpringJUnit4ClassRunner.class)
-@Transactional
+@RunWith(SpringJUnit4ClassRunner.class) @Transactional
 public class AppInitTest
 {
 
@@ -33,7 +32,7 @@ public class AppInitTest
 	
     }
 
-    @Test @Transactional @Rollback(false)
+    @Test  @Rollback(false)
     public void populateDatabase()
     {
     	appInitService.initDb();

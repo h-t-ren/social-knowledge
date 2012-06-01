@@ -1,21 +1,22 @@
 package com.huaxinshengyuan.socknow.service;
 
 import org.neo4j.graphdb.Direction;
+import org.neo4j.graphdb.GraphDatabaseService;
 import org.neo4j.graphdb.Node;
 import org.neo4j.graphdb.Relationship;
 import org.neo4j.graphdb.Transaction;
 import org.neo4j.graphdb.index.IndexManager;
-import org.neo4j.kernel.AbstractGraphDatabase;
-
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import org.springframework.data.neo4j.support.DelegatingGraphDatabase;
+import org.springframework.data.neo4j.template.Neo4jOperations;
 
 public class Neo4jDbCleaner {
-    private AbstractGraphDatabase graph;
+	private GraphDatabaseService graph;
 
-    public Neo4jDbCleaner(AbstractGraphDatabase graph) {
-        this.graph = graph;
+    public Neo4jDbCleaner(Neo4jOperations template) {
+        this.graph = ((DelegatingGraphDatabase)template.getGraphDatabase()).getGraphDatabaseService();
     }
 
     public Map<String, Object> cleanDb() {

@@ -4,12 +4,10 @@ import java.util.List;
 import org.springframework.data.neo4j.annotation.Query;
 import org.springframework.data.neo4j.repository.GraphRepository;
 import org.springframework.data.neo4j.repository.RelationshipOperationsRepository;
-import org.springframework.transaction.annotation.Transactional;
 import com.huaxinshengyuan.socknow.domain.User;
 import com.huaxinshengyuan.socknow.domain.mapper.PublicationPermission;
 import com.huaxinshengyuan.socknow.domain.relation.RelationType;
 
-@Transactional
 public interface UserRepository extends GraphRepository<User>,
         RelationshipOperationsRepository<User> {
    

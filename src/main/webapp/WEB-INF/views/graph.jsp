@@ -1,4 +1,10 @@
-    <canvas id='neoviz' height="200" width="200"></canvas>
+
+   <canvas id='neoviz'></canvas>
+    <header>
+      <section id='title'>
+      </section>
+      <br style='clear: both;'>
+    </header>
     <section id='content'>
       <script>
         //<![CDATA[
@@ -60,4 +66,23 @@
         //]]>
       </script>
     </section>
+    <aside>
+      <div id="browser_not_supported">
+      Your Browser is currently not supported.<br/><br/>Try one of these:<br/>
+      <a href="http://www.mozilla.com/en-US/firefox/firefox.html">Firefox 3.6</a><br/>
+      <a href="http://www.apple.com/safari/">Safari 4.0</a><br/>
+      <a href="http://www.google.com/chrome/">Chrome</a><br/>
+      </div>
+    </aside>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
    

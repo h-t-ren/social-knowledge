@@ -20,7 +20,7 @@ public class PublicationRepositoryTest {
     @Autowired PublicationRepository publicationRepository;
 	private Logger log = LoggerFactory.getLogger(this.getClass());
   
-	@Test
+	@Test 
     public void testPublRepo() {
 
 

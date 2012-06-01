@@ -2,9 +2,12 @@ package com.huaxinshengyuan.socknow.service;
 
 import java.util.Date;
 
+import javax.management.RuntimeErrorException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.neo4j.fieldaccess.DynamicProperties;
 import org.springframework.data.neo4j.fieldaccess.DynamicPropertiesContainer;
+import org.springframework.data.neo4j.template.Neo4jOperations;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,7 +23,6 @@ import com.huaxinshengyuan.socknow.domain.enums.Permission;
 import com.huaxinshengyuan.socknow.domain.enums.Role;
 import com.huaxinshengyuan.socknow.domain.enums.UserType;
 import com.huaxinshengyuan.socknow.domain.index.FieldIndex;
-import com.huaxinshengyuan.socknow.domain.relation.RelationType;
 import com.huaxinshengyuan.socknow.repo.AuthorRepository;
 import com.huaxinshengyuan.socknow.repo.ContactRepository;
 import com.huaxinshengyuan.socknow.repo.GroupRepository;
@@ -40,7 +42,6 @@ public class AppInitServiceImpl implements AppInitService {
 	private GroupRepository groupRepository;
 	@Autowired
 	private PublicationService publicationService;
-	
 	@Autowired private AuthorRepository authorRepository;
 	@Autowired private ContactRepository contactRepository;
 	@Autowired private KeywordRepository keywordRepository;
@@ -48,16 +49,13 @@ public class AppInitServiceImpl implements AppInitService {
 	@Autowired private KeywordService keywordService;
 	@Override @Transactional
 	public void initDb() {
-
 		createUsersAndGroups();
 		createKeywords();
 		createAuthors();
 		createPubls();
-
-
 	}
 	@Transactional
-	private void createUsersAndGroups() {
+	public void createUsersAndGroups() {
 
 		// Create Hongtao's family
 		Group hongtaoGroup = new Group("hongtao_family", Role.ROLE_ADMIN);
@@ -99,9 +97,8 @@ public class AppInitServiceImpl implements AppInitService {
 		userService.makeFriends(yangyang, yifang);
 
 	}
-	
 	@Transactional
-	private void createAuthors()
+	public void createAuthors()
 	{
 		
 		Contact hongtaoContact = new Contact("renh@iiasa.ac.at", "+43-2236-807.499", "Rosasgasse 18 1120,  Vienna, Austria", "...");
@@ -111,8 +108,12 @@ public class AppInitServiceImpl implements AppInitService {
 		hongtao.setOtherLastName("任");
 		hongtao.setContact(hongtaoContact);
 		authorRepository.save(hongtao);
-		
-		
+		/*
+		if(1==1)
+		{
+			System.out.println("Exception!!!!!!");
+			throw new RuntimeErrorException(null, "WTF");
+		}*/
 		Author tieju = new Author("Tieju", "Ma", "ECUST");
 		hongtao.setOtherFirstName("铁驹");
 		hongtao.setOtherLastName("马");
@@ -120,7 +121,7 @@ public class AppInitServiceImpl implements AppInitService {
 		
 	}
 	@Transactional
-	private void createKeywords()
+	public void createKeywords()
 	{
 		keywordRepository.save(new Keyword("Onotolgy"));
 		keywordRepository.save(new Keyword("本体"));
@@ -139,7 +140,7 @@ public class AppInitServiceImpl implements AppInitService {
 		
 	}
 	@Transactional
-	private void createPubls() {
+	public void createPubls() {
 
 		User hongtao = userRepository.findByPropertyValue(FieldIndex.LOGIN,
 				"hongtao");
@@ -177,4 +178,6 @@ public class AppInitServiceImpl implements AppInitService {
 		groupService.accessPublication(tiejuLab, onto_con, Permission.READ);
 	}
 
+
+	
 }
