@@ -10,8 +10,8 @@ import com.huaxinshengyuan.socknow.domain.enums.Permission;
 public interface PublicationPermission {
 
 	@ResultColumn("publication")
-	Publication getPublication();
+	public Publication getPublication();
 	
 	@ResultColumn("r.permission")
-	Permission getPerssion();
+	public Permission getPerssion();
 }

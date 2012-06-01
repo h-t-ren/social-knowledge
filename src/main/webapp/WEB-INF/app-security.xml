@@ -1,48 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:security="http://www.springframework.org/schema/security"
-       xsi:schemaLocation="
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="
            http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
            http://www.springframework.org/schema/security
            http://www.springframework.org/schema/security/spring-security-3.1.xsd">
-           
-    <security:global-method-security secured-annotations="enabled" pre-post-annotations="enabled" /> 
+
+	   <security:global-method-security
+		secured-annotations="enabled" pre-post-annotations="enabled">
+		</security:global-method-security>
+		 
 	<security:http pattern="/resources/**" security="none" />
-	<security:http auto-config="true" use-expressions="true" create-session="ifRequired" disable-url-rewriting="true">
+	<security:http  auto-config="true" use-expressions="true" disable-url-rewriting="true">
 		<!-- Authentication policy -->
-		
-		
-		<!-- 
-		 <security:form-login login-page="/login/login" login-processing-url="/login/login/authenticate"
-			default-target-url="/" authentication-failure-url="/login/login?login_error=1" always-use-default-target="true"/>
-		  -->
-		  <security:form-login login-page="/login/login" login-processing-url="/login/login/authenticate"
+
+		<!-- <security:form-login login-page="/login/login" login-processing-url="/login/login/authenticate" 
+			default-target-url="/" authentication-failure-url="/login/login?login_error=1" 
+			always-use-default-target="true"/> -->
+		<security:form-login login-page="/login/login"
+			login-processing-url="/login/login/authenticate"
 			authentication-failure-url="/login/login?login_error=1" />
-		 
-		 
-		 
-		 <security:logout logout-url="/login/logout" logout-success-url="/login/logoutSuccess" />
-	    
-	      <security:intercept-url pattern="/login/**" access="permitAll"/>
-	       <security:intercept-url pattern="/**" access="isAuthenticated()"/>
-	     <security:intercept-url pattern="/admin" access="hasRole('ROLE_ADMIN')"/>
-	    <security:custom-filter ref="switchUserProcessingFilter" position="SWITCH_USER_FILTER"/>
-	    <security:anonymous/>
-		<!--  <security:remember-me user-service-ref="userDetailsService" />-->
+
+		<security:logout logout-url="/login/logout"
+			logout-success-url="/login/logoutSuccess" />
+
+		<security:intercept-url pattern="/login/**"
+			access="permitAll" />
+		<security:intercept-url pattern="/**"
+			access="hasRole('ROLE_BROWSER')" />
+		<security:intercept-url pattern="/admin"
+			access="hasRole('ROLE_ADMIN')" />
+		<security:custom-filter ref="switchUserProcessingFilter"
+			position="SWITCH_USER_FILTER" />
+		<security:anonymous />
+		<!-- <security:remember-me user-service-ref="userDetailsService" /> -->
 	</security:http>
-        <security:authentication-manager>
-        <security:authentication-provider user-service-ref="userDetailsService">
-                <security:password-encoder hash="md5">
-               <security:salt-source system-wide="yibayan"/>
-            </security:password-encoder>
-        </security:authentication-provider>
-    </security:authentication-manager>
-   <bean id="userDetailsService" class="com.huaxinshengyuan.socknow.userdetails.SocknowUserDetailsService"/>
-    <!-- Automatically receives AuthenticationEvent messages -->
-     <bean id="loggerListener" class="org.springframework.security.authentication.event.LoggerListener"/>
-    <bean id="switchUserProcessingFilter" class="org.springframework.security.web.authentication.switchuser.SwitchUserFilter" autowire="byType">
-       <property name="targetUrl" value="/"/>
-    </bean>
+	<security:authentication-manager>
+		<security:authentication-provider
+			user-service-ref="userDetailsService">
+			<security:password-encoder hash="md5">
+				<security:salt-source system-wide="yibayan" />
+			</security:password-encoder>
+		</security:authentication-provider>
+	</security:authentication-manager>
+	<bean id="userDetailsService"
+		class="com.huaxinshengyuan.socknow.userdetails.SocknowUserDetailsService" />
+		
+	<!-- Automatically receives AuthenticationEvent messages -->
+	<bean id="loggerListener"
+		class="org.springframework.security.authentication.event.LoggerListener" />
+	
+	<bean id="switchUserProcessingFilter"
+		class="org.springframework.security.web.authentication.switchuser.SwitchUserFilter"
+		autowire="byType">
+		<property name="targetUrl" value="/" />
+	</bean>
+
+
+
+	
+	
+
+
 </beans>

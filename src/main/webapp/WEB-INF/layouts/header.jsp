@@ -10,8 +10,8 @@
     <c:url var="login" value="/login/login" />
     <c:url var="logout" value="/login/logout" />
     <c:url var="admin" value="/admin/dashboard" />
-	<c:url var="browse" value="/browse/dashboard" />
-	<c:url var="newData" value="/newdata/dashboard" />
+	<c:url var="explore" value="/explore/dashboard" />
+	<c:url var="newknowledge" value="/newknowledge/dashboard" />
     
   <div id="nav_top">
   <div id="app_area" >
@@ -21,7 +21,7 @@
    (<a id="headerActiveLink" href='<c:out value="${englishLocaleUrl}"/>'>English</a>|
    <a id="headerActiveLink" href='<c:out value="${chineseLocaleUrl}"/>'>中文</a>)&nbsp; 
    
-   <security:authorize access="hasRole('ROLE_USER')">
+   <security:authorize access="hasRole('ROLE_BROWSER')">
 	<c:if test="${pageContext.request.userPrincipal != null}">
 		<fmt:message key="welcome" />, ${pageContext.request.userPrincipal.name} |
 		<a id="headerActiveLink" href="${logout}"><fmt:message key="logout" /></a>
@@ -40,9 +40,12 @@
       	<li><a class="headerActiveLink" href="${admin}"><fmt:message key="admin" /></a></li>
       </security:authorize>
 	   <security:authorize access="hasRole('ROLE_USER')">
-      	<li><a class="headerActiveLink" href="${browse}"><fmt:message key="browse" /></a></li>
- 	  	<li><a class="headerActiveLink" href="${newData}"><fmt:message key="newData" /></a></li>
+ 	  	<li><a class="headerActiveLink" href="${newknowledge}"><fmt:message key="newknowledge" /></a></li>
+ 	  
      </security:authorize>
+         <security:authorize access="hasRole('ROLE_BROWSER')">
+ 	  		<li><a class="headerActiveLink" href="${explore}"><fmt:message key="explore" /></a></li>
+ 	  	</security:authorize>
 </ul>
 
 </div>

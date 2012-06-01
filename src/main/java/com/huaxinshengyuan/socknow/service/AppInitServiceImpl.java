@@ -26,7 +26,6 @@ import com.huaxinshengyuan.socknow.repo.ContactRepository;
 import com.huaxinshengyuan.socknow.repo.GroupRepository;
 import com.huaxinshengyuan.socknow.repo.KeywordRepository;
 import com.huaxinshengyuan.socknow.repo.UserRepository;
-
 @Service("appInitService")
 @Transactional
 public class AppInitServiceImpl implements AppInitService {
