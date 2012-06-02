@@ -19,11 +19,13 @@ public class Keyword extends KnowledgeNode {
 	@Size(min=2,max=64) 
 	private String keyword;
 
+	private Integer freq;
+	
 	@RelatedToVia(elementClass = KeywordSimilarity.class, type = RelationType.KeywordSimilarity, direction = Direction.BOTH)
 	private Iterable<KeywordSimilarity> keywordSimilarities;
 
 	public Keyword(){}
-	public Keyword(String keyword){ this.keyword=keyword;}
+	public Keyword(String keyword){ this.keyword=keyword; this.freq=0;}
 	
 	public String getKeyword() {
 		return keyword;
@@ -35,6 +37,12 @@ public class Keyword extends KnowledgeNode {
 
 	public Collection<KeywordSimilarity> getKeywordSimilarities() {
 		return IteratorUtil.asCollection(keywordSimilarities);
+	}
+	public Integer getFreq() {
+		return freq;
+	}
+	public void setFreq(Integer freq) {
+		this.freq = freq;
 	}
 
  

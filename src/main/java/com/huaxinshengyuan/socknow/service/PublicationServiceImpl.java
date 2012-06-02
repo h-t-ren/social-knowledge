@@ -44,6 +44,8 @@ public class PublicationServiceImpl implements PublicationService {
 		publicationKeyword.setSeq(seq);
 		publicationKeyword.setImportance(importance);
 		template.save(publicationKeyword);
+		keyword.setFreq(keyword.getFreq()+1);
+		template.save(keyword);
 		
 	}
 

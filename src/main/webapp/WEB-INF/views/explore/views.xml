@@ -15,4 +15,9 @@
 		<put-attribute name="body" value="/WEB-INF/views/explore/graph.jsp" />
 	</definition>
 	
+	<definition name="/explore/tagcloud" extends="subMenuLayout">
+	    <put-attribute name="submenu" value="/WEB-INF/views/explore/submenu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/views/explore/tagcloud.jsp" />
+	</definition>
+	
 </tiles-definitions>

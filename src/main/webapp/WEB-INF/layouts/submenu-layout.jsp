@@ -26,16 +26,17 @@
 }
 </style>
   
-   <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></script>
-   <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js'></script>
+   <script type="text/javascript" src="<c:url value="/resources/javascript/jquery/jquery.min.js" />"></script>
+   <script type="text/javascript" src="<c:url value="/resources/javascript/jquery/jquery-ui.min.js" />"></script>
+   <script type="text/javascript" src="<c:url value="/resources/javascript/jquery/jqcloud-1.0.0.min.js" />"></script>
 
 <link rel="stylesheet"
 	href="<c:url value="/resources/styles/ime_left_menu-style.css" />" type="text/css"
 	media="screen" />
     <script src="<c:url value="/resources/neo/js/ui.js"/>"></script>
     <script src="<c:url value="/resources/neo/js/processing.min.js"/>"></script>
-      <link href="<c:url value="/resources/neo/css/global.css"/>" rel='stylesheet'>
- 
+    <link href="<c:url value="/resources/neo/css/global.css"/>" rel='stylesheet'>
+    <link href="<c:url value="/resources/javascript/css/jqcloud.css"/>" rel='stylesheet'>
 </head>
 
 
@@ -64,6 +65,19 @@
 		dojo.require("dojo.parser");
 </script>
 
-
+    <style type="text/css">
+      #wordcloud {
+        margin: 30px auto;
+        width: 600px;
+        height: 371px;
+        border: none;
+      }
+      #wordcloud span.w10, #wordcloud span.w9, #wordcloud span.w8, #wordcloud span.w7 {
+        text-shadow: 0px 1px 1px #ccc;
+      }
+      #wordcloud span.w3, #wordcloud span.w2, #wordcloud span.w1 {
+        text-shadow: 0px 1px 1px #fff;
+      }
+    </style>
 
 </html>
