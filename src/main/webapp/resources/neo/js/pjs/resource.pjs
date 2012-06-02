@@ -1,4 +1,6 @@
-
+/***************************************************************
+/* Attribute
+/**************************************************************/
 
 public class Attribute {
   String id = "";
@@ -28,6 +30,9 @@ public class Attribute {
   }
 }
 
+/***************************************************************
+/* Value
+/**************************************************************/
 
 public class Value {
   String id = "";
@@ -51,7 +56,9 @@ public class Value {
   }
 }
 
-
+/***************************************************************
+/* Resource
+/**************************************************************/
 
 public class Resource {
   boolean hovering = false;
@@ -121,8 +128,7 @@ public class Resource {
   		async: true,
       type: "GET",
       url: "user",
-       data: {id: that.id},
-      //data: {id: 3},
+      data: {id: that.id},
       dataType: 'json',
       success: function(response) {
         

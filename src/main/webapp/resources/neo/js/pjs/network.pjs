@@ -30,7 +30,7 @@ float RADIUS_OPENED = 110;
 float RADIUS_CLOSED = 50;
 
 
-PFont defaultFont = loadFont("resources/neo/fonts/GraublauWeb-Regular.svg");
+PFont defaultFont = loadFont("resources/neo/css/GraublauWeb-Regular.svg");
 
 int fontSize = 11.3;
 int fontSizeCaption = 16;
@@ -52,7 +52,7 @@ Resource r;
 int selectedEdgeIndex = null;
 
 void resize() {
-	size(window.innerWidth-10, window.innerHeight-15);
+	size(window.innerWidth-180, window.innerHeight-140);
 }
 
 void setup() {	

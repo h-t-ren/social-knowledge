@@ -105,12 +105,6 @@ public class UserRestController {
 		attributes.add(attr2);
 		
 		
-		
-		
-		
-		
-		
-		
 		data.setAttributes(attributes);
 		entity.setData(data);
 		

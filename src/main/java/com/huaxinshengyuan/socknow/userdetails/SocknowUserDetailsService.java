@@ -29,7 +29,7 @@ public class SocknowUserDetailsService implements UserDetailsService {
 	  private User findByLogin(String login) {
 	        return  template.lookup(User.class,"login",login).to(User.class).single();
 	    }
-    public User getUserFromSession()
+    public  User getUserFromSession()
     {
 
         SecurityContext context = SecurityContextHolder.getContext();

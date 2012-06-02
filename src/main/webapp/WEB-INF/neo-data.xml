@@ -23,16 +23,17 @@
 
     
     <!-- Embedded -->
-	<!-- <neo4j:config storeDirectory="${graph.db.location}" />-->
+	<neo4j:config storeDirectory="${graph.db.location}" />
 	
 	
 	<!-- REST -->
+	<!-- 
 	<neo4j:config graphDatabaseService="graphDatabaseService" />
 	<bean id="graphDatabaseService"
 		class="org.springframework.data.neo4j.rest.SpringRestGraphDatabase">
 		<constructor-arg index="0" value="http://localhost:7474/db/data" />
 	</bean>
-
+     -->
 
 
 

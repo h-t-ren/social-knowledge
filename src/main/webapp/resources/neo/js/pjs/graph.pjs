@@ -1,3 +1,22 @@
+/***************************************************************
+/* Spring
+/**************************************************************/
+
+// Usage
+// ===========
+// Graph g;
+// Resource r;
+// g.addNode(enterprise = new Node("enterprise", "Enterprise"));
+// g.addNode(earth = new Node("earth", "Earth"));
+// g.addNode(kirk = new Node("kirk", "Kirk"));
+// g.addNode(spock = new Node("spock", "Spock"));
+// 
+// g.addEdge(new Edge(universe, enterprise));
+// g.addEdge(new Edge(enterprise, kirk));
+// g.addEdge(new Edge(enterprise, spock));
+// g.addEdge(new Edge(universe, earth));
+// g.addEdge(new Edge(earth, kirk));
+
 class Graph {
   ArrayList nodes;
   ArrayList edges;

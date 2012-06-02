@@ -20,7 +20,7 @@ Path = {
   removeNode: function(node) {
     
   }
-}
+},
 
 
 Attributes = {
@@ -92,12 +92,12 @@ Attributes = {
       return Attributes.expand();
     }
   }
-}
+},
 
 $(function() {
-  $('aside').height(window.innerHeight-60);
+  $('aside').height(window.innerHeight-180);
   $(window).resize(function(){
-    $('aside').height(window.innerHeight-60);
+    $('aside').height(window.innerHeight-180);
   });
 
   //Sidebar show/hide

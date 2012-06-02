@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+	"-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+	"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+	
+<tiles-definitions>
+	
+	<definition name="/explore/dashboard" extends="subMenuLayout">
+	    <put-attribute name="submenu" value="/WEB-INF/views/explore/submenu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/views/explore/home.jsp" />
+	</definition>
+	
+	<definition name="/graph" extends="subMenuLayout">
+	    <put-attribute name="submenu" value="/WEB-INF/views/explore/submenu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/views/explore/graph.jsp" />
+	</definition>
+	
+</tiles-definitions>
