@@ -4,7 +4,7 @@ import org.springframework.data.neo4j.annotation.EndNode;
 
 import org.springframework.data.neo4j.annotation.StartNode;
 
-import com.huaxinshengyuan.socknow.domain.enums.AuthorTypes;
+import com.huaxinshengyuan.socknow.domain.enums.AuthorType;
 
 
 @SuppressWarnings("serial")
@@ -18,7 +18,7 @@ public class PublicationAuthor  extends KnowledgeRelation {
 	//English name?
 	private boolean EnglishName;
 
-	private AuthorTypes authorType;
+	private AuthorType authorType;
 	
 	public int getSeq() {
 		return seq;
@@ -36,11 +36,11 @@ public class PublicationAuthor  extends KnowledgeRelation {
 		return author;
 	}
 
-	public AuthorTypes getAuthorType() {
+	public AuthorType getAuthorType() {
 		return authorType;
 	}
 
-	public void setAuthorType(AuthorTypes authorType) {
+	public void setAuthorType(AuthorType authorType) {
 		this.authorType = authorType;
 	}
 

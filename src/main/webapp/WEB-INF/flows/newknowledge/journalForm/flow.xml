@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+	<secured attributes="ROLE_USER" />
+
+	<view-state id="newJournalForm" model="journal" view="/newknowledge/journal/form">
+	<on-render>
+	  <render fragments="body"/>
+	  <evaluate expression="journalService.newInstance()" result="viewScope.journal" />
+	</on-render>
+	<transition on="createJournal" to="success">
+	  <evaluate expression="journalService.save(journal)" />
+	</transition>
+	</view-state>
+	 <end-state id="success" view="externalRedirect:/newknowledge/dashboard" />
+	
+</flow>

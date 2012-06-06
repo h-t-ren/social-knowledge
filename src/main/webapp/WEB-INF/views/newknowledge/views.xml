@@ -5,8 +5,10 @@
 	
 <tiles-definitions>
 	
-	<definition name="home" extends="standardLayout">
-		<put-attribute name="body" value="/WEB-INF/views/home.jsp" />
+	<definition name="/newknowledge/dashboard" extends="subMenuLayout">
+	    <put-attribute name="submenu" value="/WEB-INF/views/newknowledge/submenu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/views/newknowledge/home.jsp" />
 	</definition>
+	
 	
 </tiles-definitions>

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<entries>
+	
+	<entry name="Article">
+		<field idTag="22" name="title" required="true" maxLength="512"/>
+		<field idTag="28" name="bibTex" maxLength="32"/>
+		<field idTag="3" name="selectedauthorsList" lbl="Author" type="multiselect"  tag="author" required="true" />
+	    <field idTag="12" name="journal" required="true" type="select" maxLength="512"/>
+		<field idTag="25" name="volume" maxLength="2"/>
+		<field idTag="16" name="number" maxLength="2"/>
+		<field idTag="26" name="year" required="true" maxLength="4"/>
+		<field idTag="14" name="month" type="select" maxLength="3"/>
+		<field idTag="18" name="pages" maxLength="32"/>
+		<field idTag="15" name="note" maxLength="1024"/>
+		<field idTag="27" name="keywords" maxLength="512"/>
+		<field idTag="100" name="abs" lbl="Abstract"  type="textarea" maxLength="3998"/>
+		<field idTag="108" name="usernote" type="textarea" maxLength="1024"/>
+		<field idTag="109" name="file" type="file" lbl="Attachment" />
+
+	</entry>
+	
+	
+	<entry name="Book">
+		<field idTag="22" name="title" required="true" maxLength="512"/>
+		<field idTag="28" name="bibTex" maxLength="32"/>
+		<field idTag="3" name="selectedauthorsList" lbl="Author/Editor" type="multiselect" tag="author" required="true" />
+		<field idTag="21" name="series" maxLength="512"/>
+		<field idTag="25" name="volume" maxLength="2"/>
+		<field idTag="19" name="publisher" required="true" type="select" maxLength="512"/>
+		<field idTag="102" name="isbn" lbl="ISBN" tag="ISBN" maxLength="32"/>
+		<field idTag="103" name="year" required="true" maxLength="4"/>
+		<field idTag="14" name="month" type="select" maxLength="3"/>
+		<field idTag="15" name="note" maxLength="1024"/>
+		<field idTag="27" name="keywords" maxLength="512"/>
+	    <field idTag="100" name="abs" lbl="Abstract" type="textarea"  maxLength="3998"/>
+		<field idTag="108" name="usernote" type="textarea" maxLength="1024"/>
+		<field idTag="109" name="file" type="file" lbl="Attachment" />
+	</entry>
+
+	<entry name="Booklet">
+		<field idTag="22" name="title" required="true" maxLength="512"/>
+		<field idTag="28" name="bibTex" maxLength="32"/>
+		<field idTag="3" name="selectedauthorsList" lbl="Author" type="multiselect" tag="author" />
+		<field idTag="26" name="year" maxLength="4"/>
+		<field idTag="14" name="month" type="select" maxLength="3"/>
+		<field idTag="1" name="address" maxLength="512"/>
+		<field idTag="10" name="howpublished" maxLength="512"/>
+		<field idTag="15" name="note" maxLength="1024"/>
+		<field idTag="27" name="keywords" maxLength="512"/>
+		<field idTag="100" name="abs" lbl="Abstract" type="textarea" maxLength="3998"/>
+		<field idTag="108" name="usernote" type="textarea" maxLength="1024"/>
+		<field idTag="109" name="file" type="file" lbl="Attachment" />
+	</entry>
+	
+	<entry name="InBook">
+		<field idTag="22" name="title" required="true" maxLength="512"/>
+		<field idTag="28" name="bibTex" maxLength="32"/>
+		<field idTag="3" name="selectedauthorsList" lbl="Author/Editor" type="multiselect" tag="author" required="true" />
+		<field idTag="26" name="year" required="true" maxLength="4"/>
+		<field idTag="14" name="month" type="select" maxLength="3"/>
+		<field idTag="21" name="series" maxLength="512"/>
+		<field idTag="25" name="volume" maxLength="2"/>
+		<field idTag="16" name="number" maxLength="2"/>
+		<field idTag="5" name="chapter" maxLength="2"/>
+		<field idTag="18" name="pages" maxLength="32"/>
+		<field idTag="19" name="publisher" required="true" type="select" maxLength="512"/>
+		<field idTag="15" name="note" maxLength="1024"/>
+		<field idTag="27" name="keywords" maxLength="512"/>
+	    <field idTag="100" name="abs" lbl="Abstract" type="textarea" maxLength="3998"/>
+		<field idTag="108" name="usernote" type="textarea" maxLength="1024"/>
+		<field idTag="109" name="file" type="file" lbl="Attachment" />
+	</entry>
+	
+	<entry name="Incollection">
+		<field idTag="22" name="title" required="true" maxLength="512"/>
+		<field idTag="28" name="bibTex" maxLength="32"/>
+		<field idTag="3" name="selectedauthorsList" lbl="Author" type="multiselect" tag="author" required="true" />
+		<field idTag="5" name="chapter" maxLength="2"/>
+		<field idTag="18" name="pages" maxLength="32"/>
+		<field idTag="107" name="parent" lbl="Book" type="select" required="true" maxLength="32"/>
+		<field idTag="15" name="note" maxLength="1024"/>	
+		<field idTag="27" name="keywords" maxLength="512"/>
+	    <field idTag="100" name="abs" lbl="Abstract" type="textarea" maxLength="3998"/>
+	 	<field idTag="108" name="usernote" type="textarea" maxLength="1024"/>
+		<field idTag="109" name="file" type="file" lbl="Attachment" />
+	</entry>
+	<entry name="Inproceedings">
+		<field idTag="22" name="title" required="true" maxLength="512"/>
+		<field idTag="28" name="bibTex" maxLength="32"/>
+		<field idTag="3" name="selectedauthorsList" lbl="Author" type="multiselect" tag="author" required="true" />
+		<field idTag="18" name="pages" maxLength="32"/>
+		<field idTag="107" name="parent" lbl="Proceedings" type="select" required="true" maxLength="32"/>
+		<field idTag="15" name="note" maxLength="1024"/>
+		<field idTag="27" name="keywords" maxLength="512"/>
+		<field idTag="100" name="abs" lbl="Abstract" type="textarea" maxLength="3998"/>
+		<field idTag="108" name="usernote" type="textarea" maxLength="1024"/>
+		<field idTag="109" name="file" type="file" lbl="Attachment" />
+	</entry>
+	<entry name="Manual">
+		<field idTag="22" name="title" required="true" maxLength="512"/>
+		<field idTag="28" name="bibTex" maxLength="32"/>
+		<field idTag="3" name="selectedauthorsList" lbl="Author" type="multiselect" tag="author" required="true" />
+		<field idTag="7" name="edition" maxLength="32"/>
+		<field idTag="26" name="year" maxLength="4"/>
+		<field idTag="14" name="month" type="select" maxLength="3"/>
+		<field idTag="17" name="organization" maxLength="512"/>
+		<field idTag="1" name="address" maxLength="512"/>
+		<field idTag="15" name="note" maxLength="1024"/>
+		<field idTag="27" name="keywords" maxLength="512"/>
+		<field idTag="100" name="abs" lbl="Abstract" type="textarea" maxLength="3998"/>
+	    <field idTag="108" name="usernote" type="textarea" maxLength="1024"/>
+		<field idTag="109" name="file" type="file" lbl="Attachment" />
+	</entry>
+	
+		<entry name="Masterthesis">
+		<field idTag="22" name="title" required="true" maxLength="512"/>
+		<field idTag="28" name="bibTex" maxLength="32"/>
+		<field idTag="3" name="selectedauthorsList" lbl="Author" type="multiselect" tag="author" required="true" />
+		<field idTag="7" name="edition" maxLength="512"/>
+		<field idTag="26" name="year" required="true" maxLength="4"/>
+		<field idTag="14" name="month" type="select" maxLength="3"/>
+		<field idTag="20" name="school" required="true" maxLength="512"/>
+		<field idTag="1" name="address" maxLength="512"/>
+		<field idTag="15" name="note" maxLength="1024"/>
+
+		<field idTag="27" name="keywords" maxLength="512"/>
+	    <field idTag="100" name="abs" lbl="Abstract" type="textarea" maxLength="3998"/>
+	    <field idTag="108" name="usernote" type="textarea" maxLength="1024"/>
+		<field idTag="109" name="file" type="file" lbl="Attachment" />
+	</entry>
+	
+	
+	<entry name="Misc">
+		<field idTag="22" name="title" required="true" maxLength="512"/>
+		<field idTag="28" name="bibTex" maxLength="32"/>
+		<field idTag="3" name="selectedauthorsList" lbl="Author" type="multiselect" tag="author" />
+		<field idTag="7" name="edition" maxLength="512"/>
+		<field idTag="26" name="year" maxLength="4"/>
+		<field idTag="14" name="month" type="select" maxLength="3"/>
+		<field idTag="10" name="howpublished" maxLength="512"/>
+		<field idTag="15" name="note" maxLength="1024"/>
+		<field idTag="27" name="keywords" maxLength="512"/>
+		<field idTag="100" name="abs" lbl="Abstract" type="textarea" maxLength="3998"/>
+		<field idTag="108" name="usernote" type="textarea" maxLength="1024"/>
+		<field idTag="109" name="file" type="file" lbl="Attachment" />
+	</entry>
+	<entry name="Phdthesis">
+		<field idTag="22" name="title" required="true" maxLength="512"/>
+		<field idTag="28" name="bibTex" maxLength="32"/>
+		<field idTag="3" name="selectedauthorsList" lbl="Author" type="multiselect" tag="author" required="true" />
+		<field idTag="7" name="edition" maxLength="512"/>
+		<field idTag="26" name="year" required="true" maxLength="4"/>
+		<field idTag="14" name="month" type="select" maxLength="3"/>
+		<field idTag="20" name="school" required="true" maxLength="512"/>
+		<field idTag="1" name="address" maxLength="512"/>
+		<field idTag="15" name="note" maxLength="1024"/>
+		<field idTag="27" name="keywords" maxLength="512"/>
+	        <field idTag="100" name="abs" lbl="Abstract" type="textarea" maxLength="3998"/>
+	        <field idTag="108" name="usernote" type="textarea" maxLength="1024"/>
+		<field idTag="109" name="file" type="file" lbl="Attachment" />
+	</entry>
+	
+<entry name="Proceedings">
+		<field idTag="22" name="title" required="true" maxLength="512"/>
+		<field idTag="3" name="selectedauthorsList" lbl="Author/Editor" type="multiselect" tag="author" />
+		<field idTag="28" name="bibTex" maxLength="32"/>
+		<field idTag="4" name="booktitle" maxLength="512"/>
+		<field idTag="21" name="series" maxLength="512"/>
+		<field idTag="25" name="volume" maxLength="2"/>
+		<field idTag="16" name="number" maxLength="2"/>
+		<field idTag="26" name="year" required="true" maxLength="4"/>
+		<field idTag="14" name="month" type="select" maxLength="3"/>
+    	        <field idTag="19" name="publisher" type="select" maxLength="512"/>
+    	        <field idTag="17" name="organization" maxLength="512"/>
+		<field idTag="1" name="address" maxLength="512"/>
+		<field idTag="15" name="note" maxLength="1024"/>
+		<field idTag="102" name="isbn" lbl="ISBN" tag="ISBN" maxLength="32"/>
+		<field idTag="27" name="keywords" maxLength="512"/>
+		<field idTag="100" name="abs" lbl="Abstract" type="textarea" maxLength="3998"/>
+	    <field idTag="108" name="usernote" type="textarea" maxLength="1024"/>
+		<field idTag="109" name="file" type="file" lbl="Attachment" />
+	</entry>
+
+		<entry name="Techreport">
+		<field idTag="22" name="title" required="true" maxLength="512"/>
+		<field idTag="28" name="bibTex" maxLength="32"/>
+		<field idTag="3" name="selectedauthorsList" lbl="Author" type="multiselect" tag="author" required="true" />
+		<field idTag="23" name="type" maxLength="32"/>
+		<field idTag="16" name="number" maxLength="2"/>
+		<field idTag="26" name="year" required="true" maxLength="4"/>
+		<field idTag="14" name="month" type="select" maxLength="3"/>
+		<field idTag="11" name="institution" required="true" maxLength="512"/>
+		<field idTag="1" name="address" maxLength="512"/>
+		<field idTag="15" name="note" maxLength="1024"/>
+		<field idTag="27" name="keywords" maxLength="512"/>
+		<field idTag="100" name="abs" lbl="Abstract" type="textarea" maxLength="3998"/>
+		<field idTag="108" name="usernote" type="textarea" maxLength="1024"/>
+		<field idTag="109" name="file" type="file" lbl="Attachment" />
+	</entry>
+	
+	<entry name="Unpublished">
+		<field idTag="22" name="title" required="true" maxLength="512"/>
+		<field idTag="28" name="bibTex" maxLength="32"/>
+		<field idTag="3" name="selectedauthorsList" lbl="Author" type="multiselect" tag="author" required="true" />
+		<field idTag="26" name="year" maxLength="4"/>
+		<field idTag="14" name="month" type="select" maxLength="3"/>
+		<field idTag="15" name="note" required="true" maxLength="1024"/>
+		<field idTag="27" name="keywords" maxLength="512"/>
+                <field idTag="100" name="abs" lbl="Abstract" type="textarea" maxLength="3998"/>
+    	        <field idTag="108" name="usernote" type="textarea" maxLength="1024"/>
+		<field idTag="109" name="file" type="file" lbl="Attachment" />
+	</entry>
+
+</entries>

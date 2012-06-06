@@ -21,10 +21,8 @@ public class SocknowUserDetails implements UserDetails {
         this.user = user;
     }
 
-
 	@Override
     public Collection<GrantedAuthority> getAuthorities() {
-
         Role[] roles = user.getRoles();
         if (roles ==null) return Collections.emptyList();
    

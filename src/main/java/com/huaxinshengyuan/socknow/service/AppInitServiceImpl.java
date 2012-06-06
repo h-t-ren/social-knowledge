@@ -17,8 +17,8 @@ import com.huaxinshengyuan.socknow.domain.Group;
 import com.huaxinshengyuan.socknow.domain.Keyword;
 import com.huaxinshengyuan.socknow.domain.Publication;
 import com.huaxinshengyuan.socknow.domain.User;
-import com.huaxinshengyuan.socknow.domain.enums.AuthorTypes;
-import com.huaxinshengyuan.socknow.domain.enums.Fields;
+import com.huaxinshengyuan.socknow.domain.enums.AuthorType;
+import com.huaxinshengyuan.socknow.domain.enums.Field;
 import com.huaxinshengyuan.socknow.domain.enums.Permission;
 import com.huaxinshengyuan.socknow.domain.enums.Role;
 import com.huaxinshengyuan.socknow.domain.enums.UserType;
@@ -108,12 +108,6 @@ public class AppInitServiceImpl implements AppInitService {
 		hongtao.setOtherLastName("任");
 		hongtao.setContact(hongtaoContact);
 		authorRepository.save(hongtao);
-		/*
-		if(1==1)
-		{
-			System.out.println("Exception!!!!!!");
-			throw new RuntimeErrorException(null, "WTF");
-		}*/
 		Author tieju = new Author("Tieju", "Ma", "ECUST");
 		hongtao.setOtherFirstName("铁驹");
 		hongtao.setOtherLastName("马");
@@ -159,14 +153,14 @@ public class AppInitServiceImpl implements AppInitService {
 		onto_con.setAbs("Ontology engineering has been widely used for divers purposes in different communitie and numbers of apptoaches have been reported for developing ontologies; however, ...");
 
 		DynamicProperties onto_dyn = new DynamicPropertiesContainer();
-		onto_dyn.setProperty(Fields.pages.name(), "pp.279-317");
-		onto_dyn.setProperty(Fields.year.name(), "2012");
-		onto_dyn.setProperty(Fields.journal.name(),
+		onto_dyn.setProperty(Field.pages.name(), "pp.279-317");
+		onto_dyn.setProperty(Field.year.name(), "2012");
+		onto_dyn.setProperty(Field.journal.name(),
 				"Modeling for decision support in network-based service");
 		onto_con.setDyn(onto_dyn);
 		publicationService.save(onto_con);
-		publicationService.addAuthor(onto_con, hongtaoA, 1, AuthorTypes.Author, true);
-		publicationService.addAuthor(onto_con, tiejuA, 2, AuthorTypes.Author, true);
+		publicationService.addAuthor(onto_con, hongtaoA, 1, AuthorType.Author, true);
+		publicationService.addAuthor(onto_con, tiejuA, 2, AuthorType.Author, true);
 		
 		
 		Keyword ono = keywordRepository.findByPropertyValue("keyword", "Onotolgy");

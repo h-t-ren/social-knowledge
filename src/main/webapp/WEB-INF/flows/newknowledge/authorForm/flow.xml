@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+	<secured attributes="ROLE_USER" />
+
+	<view-state id="newAuthorForm" model="author" view="/newknowledge/author/form">
+	<on-render>
+	  <render fragments="body"/>
+	  <evaluate expression="authorService.newInstance()" result="viewScope.author" />
+	</on-render>
+	<transition on="createAuthor" to="success">
+	  <evaluate expression="authorService.save(author)" />
+	</transition>
+	</view-state>
+	 <end-state id="success" view="externalRedirect:/newknowledge/dashboard" />
+	
+</flow>

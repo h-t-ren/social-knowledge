@@ -17,7 +17,7 @@
 	<mvc:annotation-driven/>
 	<mvc:view-controller path="/" view-name="home"/> 	
     <mvc:view-controller path="/explore/dashboard" view-name="/explore/dashboard"/> 
-     <mvc:view-controller path="/explore/tagcloud" view-name="/explore/tagcloud"/> 
+    <mvc:view-controller path="/newknowledge/dashboard" view-name="/newknowledge/dashboard"/> 
 	<mvc:view-controller path="/login/login" />
 	<mvc:view-controller path="/login/logout" />
 	<mvc:view-controller path="/login/logoutSuccess" />  

@@ -18,6 +18,7 @@ public class Author extends KnowledgeNode {
 	@Indexed private String institution;
 	@Indexed private String otherFirstName;
 	@Indexed private String otherLastName;
+	@Indexed private String email;
 	
 	@RelatedTo(elementClass=Contact.class,type=RelationType.AuthorHasContact,direction=Direction.OUTGOING) @Fetch
 	private Contact contact;
@@ -95,6 +96,14 @@ public class Author extends KnowledgeNode {
 
 	public void setOtherLastName(String otherLastName) {
 		this.otherLastName = otherLastName;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 

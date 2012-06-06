@@ -9,6 +9,8 @@ import org.springframework.data.neo4j.annotation.RelatedTo;
 import org.springframework.data.neo4j.fieldaccess.DynamicProperties;
 
 import org.springframework.data.neo4j.support.index.IndexType;
+
+import com.huaxinshengyuan.socknow.domain.enums.PublicationType;
 import com.huaxinshengyuan.socknow.domain.index.FieldIndex;
 import com.huaxinshengyuan.socknow.domain.relation.RelationType;
 
@@ -26,6 +28,7 @@ public class Publication extends KnowledgeNode
     private Date lastModified;
     private String bib;
     private DynamicProperties dyn;
+    @Indexed private PublicationType publicationType;
 
     
     
@@ -105,6 +108,14 @@ public class Publication extends KnowledgeNode
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public PublicationType getPublicationType() {
+		return publicationType;
+	}
+
+	public void setPublicationType(PublicationType publicationType) {
+		this.publicationType = publicationType;
 	}
     
 

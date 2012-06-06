@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+	"-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+	"http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+	
+<tiles-definitions>
+	
+	<definition name="/newknowledge/author/form" extends="subMenuLayout">
+	    <put-attribute name="submenu" value="/WEB-INF/views/newknowledge/submenu.jsp" />
+		<put-attribute name="body">
+		 <definition template="/WEB-INF/views/newknowledge/author/authorForm.jsp" >
+		 <put-attribute name="authorFormFragment" value="/WEB-INF/views/newknowledge/author/authorFormFragment.jsp" />
+		 </definition>
+		</put-attribute>
+	</definition>
+	
+	
+</tiles-definitions>

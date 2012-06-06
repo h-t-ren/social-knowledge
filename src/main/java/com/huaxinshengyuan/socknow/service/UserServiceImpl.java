@@ -6,7 +6,6 @@ import java.util.List;
 import org.neo4j.graphdb.DynamicRelationshipType;
 import org.neo4j.helpers.collection.IteratorUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.neo4j.annotation.Query;
 import org.springframework.data.neo4j.template.Neo4jOperations;
 import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 import org.springframework.stereotype.Service;

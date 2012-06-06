@@ -10,7 +10,7 @@ import com.huaxinshengyuan.socknow.domain.Keyword;
 import com.huaxinshengyuan.socknow.domain.Publication;
 import com.huaxinshengyuan.socknow.domain.PublicationAuthor;
 import com.huaxinshengyuan.socknow.domain.PublicationKeyword;
-import com.huaxinshengyuan.socknow.domain.enums.AuthorTypes;
+import com.huaxinshengyuan.socknow.domain.enums.AuthorType;
 import com.huaxinshengyuan.socknow.domain.relation.RelationType;
 import com.huaxinshengyuan.socknow.repo.PublicationRepository;
 
@@ -29,7 +29,7 @@ public class PublicationServiceImpl implements PublicationService {
 
 	@Override @Transactional
 	public void addAuthor(Publication publication, Author author, int seq,
-			AuthorTypes authorType, boolean englishName) {
+			AuthorType authorType, boolean englishName) {
 		PublicationAuthor publicationAuthor =template.createRelationshipBetween(publication, author, PublicationAuthor.class, RelationType.AuthorInPublication,false);
 		publicationAuthor.setSeq(seq);
 		publicationAuthor.setEnglishName(englishName);
