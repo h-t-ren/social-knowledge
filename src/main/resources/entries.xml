@@ -170,8 +170,8 @@
 		<field idTag="16" name="number" maxLength="2"/>
 		<field idTag="26" name="year" required="true" maxLength="4"/>
 		<field idTag="14" name="month" type="select" maxLength="3"/>
-    	        <field idTag="19" name="publisher" type="select" maxLength="512"/>
-    	        <field idTag="17" name="organization" maxLength="512"/>
+        <field idTag="19" name="publisher" type="select" maxLength="512"/>
+        <field idTag="17" name="organization" maxLength="512"/>
 		<field idTag="1" name="address" maxLength="512"/>
 		<field idTag="15" name="note" maxLength="1024"/>
 		<field idTag="102" name="isbn" lbl="ISBN" tag="ISBN" maxLength="32"/>

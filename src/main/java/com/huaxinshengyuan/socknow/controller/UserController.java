@@ -31,6 +31,16 @@ public class UserController {
 	}
 	
 
+	
+	
+	
+	@RequestMapping(value = "/explore/ajaxtest", method = RequestMethod.GET, headers=HttpHeaders.HTML)
+	public String  getAjaxtest() {
+		return "/explore/ajaxtest";
+	}
+	
+	
+	
 
 	/** Data binding still doesn't work! so go to spring webflow**/
 	/**

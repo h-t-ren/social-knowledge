@@ -1,6 +1,7 @@
 package com.huaxinshengyuan.socknow.controller;
 
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Vector;
@@ -8,6 +9,9 @@ import java.util.Vector;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,14 +20,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.huaxinshengyuan.socknow.domain.Author;
 import com.huaxinshengyuan.socknow.domain.User;
 import com.huaxinshengyuan.socknow.domain.UserInGroup;
 import com.huaxinshengyuan.socknow.domain.mapper.PublicationPermission;
 import com.huaxinshengyuan.socknow.domain.rest.Attr;
 import com.huaxinshengyuan.socknow.domain.rest.Data;
 import com.huaxinshengyuan.socknow.domain.rest.Entity;
+import com.huaxinshengyuan.socknow.domain.rest.JqgridResponse;
 import com.huaxinshengyuan.socknow.domain.rest.OEntity;
 import com.huaxinshengyuan.socknow.domain.rest.Users;
+import com.huaxinshengyuan.socknow.repo.AuthorRepository;
 import com.huaxinshengyuan.socknow.repo.UserRepository;
 import com.huaxinshengyuan.socknow.service.UserService;
 
@@ -35,6 +43,8 @@ public class UserRestController {
 	private Logger log = LoggerFactory.getLogger(this.getClass());
 	@Autowired private UserService userService;
 	@Autowired private UserRepository userRepository;
+	
+	@Autowired private AuthorRepository authorRepository;
 
 	@RequestMapping(value = LogicRequest.USER_LIST, method = RequestMethod.GET, headers=HttpHeaders.JSON_XML)
 	public @ResponseBody Users getAllUsers() {
@@ -118,6 +128,48 @@ public class UserRestController {
 	}
 	
 	
-	
+	@RequestMapping(value="/explore/ajaxtest/fetchdata", produces="application/json")
+	public @ResponseBody JqgridResponse<Author> records(
+    		@RequestParam("_search") Boolean search,
+    		@RequestParam(value="filters", required=false) String filters,
+    		@RequestParam(value="page", required=false) Integer page,
+    		@RequestParam(value="rows", required=false) Integer rows,
+    		@RequestParam(value="sidx", required=false) String sidx,
+    		@RequestParam(value="sord", required=false) String sord,
+    		@RequestParam(value="first_cn", required=false) String first_cn
+    		) {
+
+		Pageable pageRequest = new PageRequest(page-1, rows);
+		
+		//if (search == true) {
+		//	return getFilteredRecords(filters, pageRequest);
+			
+		//} 
+		Page<Author> authors;
+		if(first_cn!=null&&!first_cn.isEmpty())	
+		{
+			System.out.println("====---------"+first_cn);
+			authors =	authorRepository.findByOtherFirstName(first_cn,  pageRequest);
+		
+		}
+		else
+		{
+			 authors = authorRepository.findAll(pageRequest);
+		}
+		
+	   List<Author> usrList = new ArrayList<Author>();
+	   for(Author u :authors)
+	   {
+		   usrList.add(u);
+	   }
+		
+		JqgridResponse<Author> response = new JqgridResponse<Author>();
+		response.setRows(usrList);
+		response.setRecords(Long.valueOf(authors.getTotalElements()).toString());
+		response.setTotal(Integer.valueOf(authors.getTotalPages()).toString());
+		response.setPage(Integer.valueOf(authors.getNumber()+1).toString());
+		
+		return response;
+	}
 
 }

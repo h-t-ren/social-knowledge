@@ -9,4 +9,5 @@ SocknowUserDetails sockUser = (SocknowUserDetails)SecurityContextHolder.getConte
 
 %>
 <a href='<c:url value="/graph?id="/><%=sockUser.getUser().getId()%>'>My map</a><br/>
-<a href='<c:url value="/explore/tagcloud"/>'>Tag cloud</a>
+<a href='<c:url value="/explore/tagcloud"/>'>Tag cloud</a><br/>
+<a href='<c:url value="/explore/ajaxtest"/>'>ajax test</a>

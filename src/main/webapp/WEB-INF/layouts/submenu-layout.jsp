@@ -37,6 +37,28 @@
     <script src="<c:url value="/resources/neo/js/processing.min.js"/>"></script>
     <link href="<c:url value="/resources/neo/css/global.css"/>" rel='stylesheet'>
     <link href="<c:url value="/resources/javascript/css/jqcloud.css"/>" rel='stylesheet'>
+    
+    
+    
+    
+    
+    
+ <link rel="stylesheet" type="text/css" media="screen" href='<c:url value="/resources/javascript/jqgrid/css/jquery-ui/pepper-grinder/jquery-ui-1.8.16.custom.css"/>'/>
+<link rel="stylesheet" type="text/css" media="screen" href='<c:url value="/resources/javascript/jqgrid/css/ui.jqgrid-4.3.1.css"/>'/>
+<!--  
+<script type='text/javascript' src='<c:url value="/resources/javascript/jqgrid/js/jquery-1.6.4.min.js"/>'></script>
+<script type='text/javascript' src='<c:url value="/resources/javascript/jqgrid/js/jquery-ui-1.8.16.custom.min.js"/>'></script>
+-->
+<script type='text/javascript' src='<c:url value="/resources/javascript/jqgrid/js/grid.locale-en-4.3.1.js"/>'></script>
+<script type='text/javascript' src='<c:url value="/resources/javascript/jqgrid/js/jquery.jqGrid.min.4.3.1.js"/>'></script>
+<script type='text/javascript' src='<c:url value="/resources/javascript/jqgrid/js/custom.js"/>'></script>
+
+    
+    
+    
+    
+    
+    
 </head>
 
 
