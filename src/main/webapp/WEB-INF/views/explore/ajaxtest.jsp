@@ -270,7 +270,8 @@
 	function gridReload(){
 		var first_cn = jQuery("#search_firstName").val(); 
 		//first_cn=decodeURI(first_cn);
-		jQuery("#grid").jqGrid('setGridParam',{url:"${recordsUrl}?first_cn='"+first_cn+"''",page:1}).trigger("reloadGrid"); } 
+		//for tomcat  set URIEncoding="UTF-8" in <connector> settings
+		jQuery("#grid").jqGrid('setGridParam',{url:"${recordsUrl}?first_cn="+first_cn,page:1}).trigger("reloadGrid"); } 
 	</script>
 </head>
 
