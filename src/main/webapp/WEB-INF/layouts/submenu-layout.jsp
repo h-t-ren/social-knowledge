@@ -56,8 +56,9 @@
     
     
     
-    
-    
+  <script type="text/javascript"
+	src="<c:url value="/resources/javascript/niceforms.js" />"></script>  
+    <link rel="stylesheet" type="text/css" media="screen" href='<c:url value="/resources/javascript/css/niceforms-default.css"/>'/>
     
 </head>
 
