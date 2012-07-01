@@ -7,11 +7,7 @@ import java.util.List;
 public class PublicationEntry {
 	
 	private String publicationType;
-	
-	
 	private List<Field> field;
-
-
 
 
 	public void setField(List<Field> field) {

@@ -5,7 +5,6 @@ import java.io.Serializable;
 @SuppressWarnings("serial")
 public class Field implements Serializable {
 
-    private Integer idTag;
 	private String tag;
 	private String name;
 	private String type;
@@ -18,9 +17,9 @@ public class Field implements Serializable {
 	{
 		
 	}
-	public Field(Integer idTag,String tag,String name,String type,Integer maxLength,Boolean required,String label,String value)
+	public Field(String tag,String name,String type,Integer maxLength,Boolean required,String label,String value)
 	{
-        this.idTag=idTag;
+
 		this.tag=tag;
 		this.name=name;
 		this.type =type;
@@ -70,12 +69,6 @@ public class Field implements Serializable {
 	}
 	public String getValue() {
 		return value;
-	}
-	public void setIdTag(Integer idTag) {
-		this.idTag = idTag;
-	}
-	public Integer getIdTag() {
-		return idTag;
 	}
 
 }

@@ -30,8 +30,7 @@ public class Publication extends KnowledgeNode
     private DynamicProperties dyn;
     @Indexed private PublicationType publicationType;
 
-    
-    
+
     @RelatedTo(type=RelationType.UserOwnedPublication, direction = Direction.INCOMING)@Fetch
     private User user;
 	@RelatedTo(type=RelationType.UserModifyPublication, direction = Direction.INCOMING)@Fetch

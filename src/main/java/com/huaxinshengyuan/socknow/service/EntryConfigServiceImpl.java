@@ -39,7 +39,7 @@ public class EntryConfigServiceImpl implements EntryConfigService {
 		Boolean required;
 		String type;
 		Integer maxLength = 0;
-		log.debug("paring .xml starting.........");
+		//log.debug("paring .xml starting.........");
 		for (Iterator iterFields = fields.iterator(); iterFields.hasNext(); fieldNo++) {
 			iterFields.next();
 			String name = (String) entryConfig.getProperty("entry{"
@@ -80,11 +80,8 @@ public class EntryConfigServiceImpl implements EntryConfigService {
 				maxLength = Integer.parseInt(length);
 			}
 
-			String idTag = (String) entryConfig.getProperty("entry{" + entryNo
-					+ "}/field{" + fieldNo + "}@idTag");
 			
 			Field field = new Field();
-			field.setIdTag(Integer.parseInt(idTag));
 			field.setName(name);
 			field.setType(type);
 			field.setLabel(lbl);
