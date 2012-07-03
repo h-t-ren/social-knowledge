@@ -7,7 +7,7 @@
 	<view-state id="newPublicationForm" view="/newknowledge/publication/form">
 	<on-entry>
 	  <render fragments="body"/>
-	  <evaluate expression="entryConfigService.getFieldList(requestParameters.idPublicationType)" result="viewScope.fields" />
+	  <evaluate expression="entryConfigService.find(requestParameters.idPublicationType)" result="viewScope.publicationEntry" />
 	</on-entry>
 	</view-state>
 	

@@ -8,7 +8,7 @@ public class PublicationKeyword extends KnowledgeRelation{
 	@StartNode private Publication publication;
 	@EndNode private Keyword keyword;
 	private int seq;
-	private int importance;
+	private float importance;
 
 	public Publication getPublication() {
 		return publication;
@@ -28,10 +28,10 @@ public class PublicationKeyword extends KnowledgeRelation{
 	public void setSeq(int seq) {
 		this.seq = seq;
 	}
-	public int getImportance() {
+	public float getImportance() {
 		return importance;
 	}
-	public void setImportance(int importance) {
+	public void setImportance(float importance) {
 		this.importance = importance;
 	}
 	

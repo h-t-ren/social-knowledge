@@ -1,11 +1,12 @@
 package com.huaxinshengyuan.socknow.domain.oxm;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name="entries")
-public class PublicationEntries {
+public class PublicationEntries implements Serializable{
 
 	private List<PublicationEntry> entry;
 

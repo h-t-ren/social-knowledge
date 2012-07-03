@@ -12,6 +12,8 @@
 	<link rel="stylesheet" href="<c:url value="/resources/styles/blueprint/screen.css" />" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="<c:url value="/resources/styles/blueprint/print.css" />" type="text/css" media="print" />
     <script type="text/javascript" src="<c:url value="/resources/dojo/dojo.js" />" djConfig="parseOnLoad: true"></script>
+        <script type="text/javascript" src="<c:url value="/resources/spring/Spring.js" />"></script>
+    <script type="text/javascript" src="<c:url value="/resources/spring/Spring-Dojo.js" />"></script>
     <link rel="stylesheet" href="<c:url value="/resources/styles/ime-web.css" />" type="text/css" media="screen" />
     <link rel="stylesheet" href="<c:url value="/resources/styles/login.css" />" type="text/css" media="screen" />
 	
@@ -85,6 +87,7 @@
         dojo.require("dijit.layout.ContentPane");
         dojo.require("dijit.layout.BorderContainer");
         dojo.require("dijit.layout.LayoutContainer");
+        dojo.require("dijit.form.Textarea");
 		dojo.require("dojo.parser");
 </script>
 

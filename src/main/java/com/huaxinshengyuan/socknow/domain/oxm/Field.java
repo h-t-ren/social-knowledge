@@ -17,17 +17,7 @@ public class Field implements Serializable {
 	{
 		
 	}
-	public Field(String tag,String name,String type,Integer maxLength,Boolean required,String label,String value)
-	{
 
-		this.tag=tag;
-		this.name=name;
-		this.type =type;
-		this.maxLength=maxLength;
-		this.required=required;
-		this.label=label;
-		this.value =value;
-	}
 	public String getTag() {
 		return tag;
 	}

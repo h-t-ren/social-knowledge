@@ -1,5 +1,6 @@
 package com.huaxinshengyuan.socknow.service;
 
+import org.apache.commons.configuration.ConfigurationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.neo4j.template.Neo4jOperations;
 import org.springframework.stereotype.Service;
@@ -11,6 +12,7 @@ import com.huaxinshengyuan.socknow.domain.Publication;
 import com.huaxinshengyuan.socknow.domain.PublicationAuthor;
 import com.huaxinshengyuan.socknow.domain.PublicationKeyword;
 import com.huaxinshengyuan.socknow.domain.enums.AuthorType;
+import com.huaxinshengyuan.socknow.domain.oxm.PublicationEntry;
 import com.huaxinshengyuan.socknow.domain.relation.RelationType;
 import com.huaxinshengyuan.socknow.repo.PublicationRepository;
 
@@ -20,6 +22,7 @@ public class PublicationServiceImpl implements PublicationService {
 	
 	@Autowired private PublicationRepository publicationRepository;
 	@Autowired private Neo4jOperations template;
+	@Autowired private EntryConfigService entryConfigService;
 	
 	@Override @Transactional
 	public void save(Publication publication) {
@@ -48,5 +51,7 @@ public class PublicationServiceImpl implements PublicationService {
 		template.save(keyword);
 		
 	}
+
+
 
 }

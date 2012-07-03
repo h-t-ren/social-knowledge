@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.huaxinshengyuan.socknow.domain.oxm.Field;
+import com.huaxinshengyuan.socknow.domain.oxm.PublicationEntry;
 
 @Service("entryConfigService")
 public class EntryConfigServiceImpl implements EntryConfigService {
@@ -22,6 +23,9 @@ public class EntryConfigServiceImpl implements EntryConfigService {
 	private String filePath =this.getClass().getResource("/").getPath()+"entries.xml";
 
 	private XMLConfiguration entryConfig;
+	
+	
+
 /*
 	public EntryConfigServiceImpl(String filePath)
 			throws ConfigurationException {
@@ -39,6 +43,7 @@ public class EntryConfigServiceImpl implements EntryConfigService {
 		Boolean required;
 		String type;
 		Integer maxLength = 0;
+	 
 		//log.debug("paring .xml starting.........");
 		for (Iterator iterFields = fields.iterator(); iterFields.hasNext(); fieldNo++) {
 			iterFields.next();
@@ -158,6 +163,16 @@ public class EntryConfigServiceImpl implements EntryConfigService {
 
 	public void setXMLCongiguration(XMLConfiguration entryConfig) {
 		this.entryConfig = entryConfig;
+	}
+	@Override
+	public PublicationEntry find(int entryNo) throws ConfigurationException {
+		PublicationEntry pubEntry = new PublicationEntry();
+		pubEntry.setField(getFieldList(entryNo));
+		entryNo--;
+		 String  publicationType = (String) entryConfig.getProperty("entry{"
+					+ entryNo + "}@name");
+		pubEntry.setPublicationType(publicationType);
+		return pubEntry;
 	}
 
 }
