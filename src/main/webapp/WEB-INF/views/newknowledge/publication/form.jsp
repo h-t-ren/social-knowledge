@@ -9,7 +9,7 @@
     	<legend>New ${publicationEntry.publicationType}</legend>
         <dl>
         	<dt><label for="title">title:</label></dt>
-            <dd><input type="text" name="title" id="title" size="32" maxlength="128" /></dd>
+            <dd><input type="text" name="title" id="title" size="62" maxlength="128" /></dd>
         </dl>
         <dl>
         	<dt><label for="bibtex">bibtex:</label></dt>
