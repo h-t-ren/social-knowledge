@@ -45,6 +45,10 @@
              <dd><input type="text" name="${field.name}" id="${field.name}" size="32" maxlength="32" /></dd>
            </dl>
         </c:forEach>
+          <dl>
+        	 <dt></dt>
+             <dd><button id="createPublication" type="submit" name="_eventId_createPublication">Create</button><button id="cancelPublication" type="submit" name="_eventId_cancelPublication">Cancel</button></dd>
+           </dl>
 
     </fieldset>
     

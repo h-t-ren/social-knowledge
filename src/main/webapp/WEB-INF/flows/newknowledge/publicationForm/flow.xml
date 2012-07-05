@@ -9,6 +9,8 @@
 	  <render fragments="body"/>
 	  <evaluate expression="entryConfigService.find(requestParameters.idPublicationType)" result="viewScope.publicationEntry" />
 	</on-entry>
+		<transition on="cancelPublication" to="success">
+	    </transition>
 	</view-state>
-	
+	 <end-state id="success" view="externalRedirect:/newknowledge/dashboard" />
 </flow>
