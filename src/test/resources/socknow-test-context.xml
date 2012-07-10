@@ -10,7 +10,7 @@
 
     <context:annotation-config/>
     <context:spring-configured/>
-    
+   
     
      <!-- Embedded -->
     <neo4j:config storeDirectory="data/graph.db" />

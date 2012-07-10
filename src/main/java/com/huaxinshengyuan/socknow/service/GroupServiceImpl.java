@@ -21,7 +21,6 @@ public class GroupServiceImpl implements GroupService {
 	@Override @Transactional
 	public void save(Group group) {
 		groupRepository.save(group);
-
 	}
 
 	@Override @Transactional
