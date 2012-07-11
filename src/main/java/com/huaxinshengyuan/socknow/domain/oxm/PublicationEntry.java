@@ -25,6 +25,7 @@ public class PublicationEntry implements Serializable{
     private Journal journal;
     private String bibtex;
     private String abs;
+    private String title;
     private List<Document> documents;
     private  List<PublicationKeyword> publicationKeywords;
     
@@ -136,6 +137,16 @@ public class PublicationEntry implements Serializable{
 
 	public void setAuthorList(List<Author> authorList) {
 		this.authorList = authorList;
+	}
+
+
+	public String getTitle() {
+		return title;
+	}
+
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 
