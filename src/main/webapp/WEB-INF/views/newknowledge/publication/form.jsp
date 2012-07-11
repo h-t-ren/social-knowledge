@@ -19,8 +19,8 @@
         <dl>
         	<dt><label for="author">author:</label></dt>
             <dd><c:forEach items="${publicationEntry.authorList}" var="selectedAuthor">
-           <c:out value="${selectedAuthor.firstName}" />, <c:out value="${selectedAuthor.lastName}" />&nbsp;
-            </c:forEach>
+                   <c:out value="${selectedAuthor.firstName}" />, <c:out value="${selectedAuthor.lastName}" />&nbsp;
+                </c:forEach>
              <a id="addAuthors" href="${flowExecutionUrl}&_eventId=addAuthors" >Add authors</a>
             	<script type="text/javascript">
 		           Spring.addDecoration(new Spring.AjaxEventDecoration({
@@ -32,6 +32,17 @@
 	            </script>
             </dd>
         </dl>
+        <dl>
+        	<dt><label for="keywords">keywords:</label></dt>
+            <dd> <input type="text" name="k1" id="k1" size="32" maxlength="32" /><span style="display: inline-block; width: 200px; padding: 7px 5px 7px 5px;"><input id="imp1" type="slider" name="imp1" value="0.5" /></span><br/>
+                 <input type="text" name="k2" id="k2" size="32" maxlength="32" /><span style="display: inline-block; width: 200px; padding: 7px 5px 7px 5px;"><input id="imp2" type="slider" name="imp2" value="0.5" /></span><br/>
+                 <input type="text" name="k3" id="k3" size="32" maxlength="32" /><span style="display: inline-block; width: 200px; padding: 7px 5px 7px 5px;"><input id="imp3" type="slider" name="imp3" value="0.5" /></span><br/>
+                 <input type="text" name="k4" id="k4" size="32" maxlength="32" /><span style="display: inline-block; width: 200px; padding: 7px 5px 7px 5px;"><input id="imp4" type="slider" name="imp4" value="0.5" /></span><br/>
+                 <input type="text" name="k5" id="k5" size="32" maxlength="32" /><span style="display: inline-block; width: 200px; padding: 7px 5px 7px 5px;"><input id="imp5" type="slider" name="imp5" value="0.5" /></span><br/>
+            </dd>
+        </dl>
+        
+        
         
          <dl>
         	<dt><label for="abs">abstract:</label></dt>
@@ -61,3 +72,13 @@
     </fieldset>
     
 </form:form>
+
+          <script type="text/javascript" charset="utf-8">
+            
+              jQuery("#imp1").slider({ from: 0, to: 1,step:0.05, round:2, skin: "round",   scale: ['', '','','',''],dimension: "&nbsp;", skin: "round",callback: function( value ){  }});
+              jQuery("#imp2").slider({ from: 0, to: 1,step:0.05, round:2, skin: "round",   scale: ['', '','','',''],dimension: "&nbsp;", skin: "round",callback: function( value ){  }});
+              jQuery("#imp3").slider({ from: 0, to: 1,step:0.05, round:2, skin: "round",   scale: ['', '','','',''],dimension: "&nbsp;", skin: "round",callback: function( value ){  }});
+              jQuery("#imp4").slider({ from: 0, to: 1,step:0.05, round:2, skin: "round",   scale: ['', '','','',''],dimension: "&nbsp;", skin: "round",callback: function( value ){  }});
+              jQuery("#imp5").slider({ from: 0, to: 1,step:0.05, round:2, skin: "round",   scale: ['', '','','',''],dimension: "&nbsp;", skin: "round",callback: function( value ){  }});
+             
+          </script>

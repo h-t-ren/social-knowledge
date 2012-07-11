@@ -55,6 +55,28 @@
 <script type='text/javascript' src='<c:url value="/resources/javascript/jqgrid/js/jquery.jqGrid.min.4.3.1.js"/>'></script>
 <script type='text/javascript' src='<c:url value="/resources/javascript/jqgrid/js/custom.js"/>'></script>
 
+
+	<link rel="stylesheet" href="<c:url value="/resources/javascript/slide/css/jslider.css" />" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="<c:url value="/resources/javascript/slide/css/jslider.blue.css" />" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="<c:url value="/resources/javascript/slide/css/jslider.plastic.css" />" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="<c:url value="/resources/javascript/slide/css/jslider.round.css" />" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="<c:url value="/resources/javascript/slide/css/jslider.round.plastic.css" />" type="text/css" media="screen, projection" />
+
+	<script type="text/javascript"
+	src="<c:url value="/resources/javascript/slide/js/jshashtable-2.1_src.js" />"></script>
+	<script type="text/javascript"
+	src="<c:url value="/resources/javascript/slide/js/jquery.numberformatter-1.2.3.js" />"></script>
+	<script type="text/javascript"
+	src="<c:url value="/resources/javascript/slide/js/tmpl.js" />"></script>
+	<script type="text/javascript"
+	src="<c:url value="/resources/javascript/slide/js/jquery.dependClass-0.1.js" />"></script>
+	<script type="text/javascript"
+	src="<c:url value="/resources/javascript/slide/js/draggable-0.1.js" />"></script>
+	<script type="text/javascript"
+	src="<c:url value="/resources/javascript/slide/js/jquery.slider.js" />"></script>
+
+
+
     
     
     
