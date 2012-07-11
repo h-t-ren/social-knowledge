@@ -8,8 +8,15 @@
 	<definition name="/newknowledge/publication/form" extends="subMenuLayout">
 	    <put-attribute name="submenu" value="/WEB-INF/views/newknowledge/submenu.jsp" />
 	    <put-attribute name="body" value="/WEB-INF/views/newknowledge/publication/form.jsp" />
-	    
 	</definition>
 	
+	<definition name="/newknowledge/publication/authorsForm" extends="subMenuLayout">
+	   	    <put-attribute name="submenu" value="/WEB-INF/views/newknowledge/submenu.jsp" />
+		   <put-attribute name="body">
+	    	    <definition template="/WEB-INF/views/newknowledge/publication/authorsForm.jsp">
+	    	    <put-attribute name="authorFormFragment" value="/WEB-INF/views/newknowledge/author/authorFormFragment.jsp" />
+	    	  </definition>
+	    </put-attribute>
+	</definition>
 	
 </tiles-definitions>

@@ -5,12 +5,43 @@
 	<secured attributes="ROLE_USER" />
 
 	<view-state id="newPublicationForm" view="/newknowledge/publication/form">
-	<on-entry>
-	  <render fragments="body"/>
-	  <evaluate expression="entryConfigService.find(requestParameters.idPublicationType)" result="viewScope.publicationEntry" />
-	</on-entry>
-		<transition on="cancelPublication" to="success">
-	    </transition>
+	  <on-entry>
+	    <render fragments="body"/>
+	    <evaluate expression="entryConfigService.find(requestParameters.idPublicationType)" result="flowScope.publicationEntry" />
+	  </on-entry>
+	    <transition on="addAuthors" to="authorsForm" />
+		<transition on="cancelPublication" to="success" />
 	</view-state>
+	
+	
+	<view-state id="authorsForm" view="/newknowledge/publication/authorsForm" model="author">
+		<on-entry>
+			<render fragments="body" />
+			<evaluate expression="authorService.findAuthor(requestParameters.idAuthor)"
+				result="viewScope.author" />
+		</on-entry>
+		<on-render>
+			<render fragments="body" />
+			<evaluate expression="authorService.findAll()" result="flashScope.authors" />
+		</on-render>
+		<transition on="createAuthor">
+	  	        <evaluate expression="publService.addFAuthor(publication,author)" />
+	  	         <render fragments="body" />
+		</transition> 
+		<transition on="addAuthor" to="newPublicationForm1">
+			<evaluate expression="authorService.addAuthor(publicationEntry,requestParameters.idExistAuthor)" />
+	  	     <render fragments="body" />
+		</transition> 
+	    <transition on="cancel" to="newPublicationForm1" bind="false"/>
+	</view-state>
+	
+	
+	
+	<view-state id="newPublicationForm1" view="/newknowledge/publication/form">
+	    <transition on="addAuthors" to="authorsForm" />
+		<transition on="cancelPublication" to="success" />
+	</view-state>
+	
+	
 	 <end-state id="success" view="externalRedirect:/newknowledge/dashboard" />
 </flow>

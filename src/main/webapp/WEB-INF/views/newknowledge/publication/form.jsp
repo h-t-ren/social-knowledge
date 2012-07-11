@@ -18,10 +18,18 @@
         
         <dl>
         	<dt><label for="author">author:</label></dt>
-            <dd><c:forEach items="${publication.publicationAuthors}" var="pauthor">
-                     <c:out value="${pauthor.author.firstName}" />, <c:out value="${pauthor.author.lastName}" />&nbsp;
+            <dd><c:forEach items="${publicationEntry.authorList}" var="selectedAuthor">
+           <c:out value="${selectedAuthor.firstName}" />, <c:out value="${selectedAuthor.lastName}" />&nbsp;
             </c:forEach>
-             <button type="button" name="author" id="author">Add author</button>
+             <a id="addAuthors" href="${flowExecutionUrl}&_eventId=addAuthors" >Add authors</a>
+            	<script type="text/javascript">
+		           Spring.addDecoration(new Spring.AjaxEventDecoration({
+			       elementId: "addAuthors",
+			       event: "onclick",
+			       popup:true,
+			       params: {fragments: "body",mode:"embedded"}		
+		           }));
+	            </script>
             </dd>
         </dl>
         

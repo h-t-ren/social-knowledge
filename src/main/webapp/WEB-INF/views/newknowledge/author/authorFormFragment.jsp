@@ -12,5 +12,5 @@
 	   <tr><th>First name (Chinese):</th><td><form:input path="otherFirstName"/></td></tr>
 	   <tr><th>Last name(Chinese):</th><td><form:input path="otherLastName"/></td></tr>
 	   </table>
-    <p><button id="createAuthor" type="submit" name="_eventId_createAuthor">Create</button></p>
+    <p><button id="createAuthor" type="submit" name="_eventId_createAuthor">Create</button><button id="cancel" type="submit" name="_eventId_cancel">Cancel</button></p>
    </fieldset>

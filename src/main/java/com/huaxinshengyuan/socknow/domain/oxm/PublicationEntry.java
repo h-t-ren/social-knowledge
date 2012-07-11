@@ -1,7 +1,10 @@
 package com.huaxinshengyuan.socknow.domain.oxm;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
+
+import com.huaxinshengyuan.socknow.domain.Author;
 import com.huaxinshengyuan.socknow.domain.Document;
 import com.huaxinshengyuan.socknow.domain.Journal;
 import com.huaxinshengyuan.socknow.domain.Publication;
@@ -24,6 +27,8 @@ public class PublicationEntry implements Serializable{
     private String abs;
     private List<Document> documents;
     private  List<PublicationKeyword> publicationKeywords;
+    
+    private List<Author> authorList = new ArrayList<Author>(0);
 	public void setField(List<Field> field) {
 		this.field = field;
 	}
@@ -121,6 +126,16 @@ public class PublicationEntry implements Serializable{
 
 	public void setPublicationKeywords(List<PublicationKeyword> publicationKeywords) {
 		this.publicationKeywords = publicationKeywords;
+	}
+
+
+	public List<Author> getAuthorList() {
+		return authorList;
+	}
+
+
+	public void setAuthorList(List<Author> authorList) {
+		this.authorList = authorList;
 	}
 
 

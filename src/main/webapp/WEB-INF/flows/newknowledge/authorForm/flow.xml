@@ -12,6 +12,7 @@
 	<transition on="createAuthor" to="success">
 	  <evaluate expression="authorService.save(author)" />
 	</transition>
+	 <transition on="cancel" to="success"/>
 	</view-state>
 	 <end-state id="success" view="externalRedirect:/newknowledge/dashboard" />
 	
