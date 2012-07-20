@@ -128,8 +128,9 @@ public class Resource {
   		async: true,
       type: "GET",
       url: "user",
+      contentType:"application/json; charset=utf-8",
       data: {id: that.id},
-      dataType: 'json',
+      dataType: "json",
       success: function(response) {
         
         // apply fetched data

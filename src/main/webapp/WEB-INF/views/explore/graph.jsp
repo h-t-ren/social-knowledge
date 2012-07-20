@@ -51,7 +51,7 @@
                 p.resourceId = "0";
               }
           
-              p.init(p.ajax("resources/neo/js/pjs/physics.pjs")+p.ajax("resources/neo/js/pjs/donut.pjs")+p.ajax("resources/neo/js/pjs/resource.pjs")+p.ajax("resources/neo/js/pjs/node.pjs")+p.ajax("resources/neo/js/pjs/edge.pjs")+p.ajax("resources/neo/js/pjs/graph.pjs")+p.ajax("resources/neo/js/pjs/network.pjs"));
+              p.init(p.ajax("resources/neo/js/pjs/physics.pjs")+p.ajax("resources/neo/js/pjs/value.pjs")+p.ajax("resources/neo/js/pjs/donut.pjs")+p.ajax("resources/neo/js/pjs/resource.pjs")+p.ajax("resources/neo/js/pjs/node.pjs")+p.ajax("resources/neo/js/pjs/edge.pjs")+p.ajax("resources/neo/js/pjs/graph.pjs")+p.ajax("resources/neo/js/pjs/network.pjs"));
               initialized = true;
               
               $(window).resize(function(){
