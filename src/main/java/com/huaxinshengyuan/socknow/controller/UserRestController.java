@@ -148,7 +148,7 @@ public class UserRestController {
 		Page<Author> authors;
 		if(first_cn!=null&&!first_cn.isEmpty())	
 		{
-			//System.out.println("====---------"+first_cn);
+			System.out.println("====---------"+first_cn);
 			authors =	authorRepository.findByOtherFirstName(first_cn,  pageRequest);
 		
 		}
