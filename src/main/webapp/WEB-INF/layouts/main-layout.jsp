@@ -43,11 +43,7 @@
 	src="<c:url value="/resources/javascript/jquery/jquery-ui-1.8.10.custom.min.js" />"></script>
 <script type="text/javascript"
 	src="<c:url value="/resources/javascript/jquery/jquery.blockUI.js" />"></script>
-
 <link type="text/css" href="<c:url value="/resources/javascript/jquery/jquery-ui-1.8.10.custom.css" />" rel="stylesheet" />	
-
-
-
 <script type="text/javascript" src="<c:url value="/resources/javascript/jquery/table/jquery.dataTables.js" />"></script>	
 		
 <link rel="stylesheet" href="<c:url value="/resources/javascript/jquery/table/table.css" />" type="text/css" media="screen, projection" />
